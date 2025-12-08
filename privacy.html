@@ -12,138 +12,273 @@
       --accentB: #00F5FF;
       --textMain: #FFFFFF;
       --textSub: #BFC4D0;
+      --borderSoft: #20232a;
     }
+
     * { box-sizing: border-box; }
-    body {
+
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
         Roboto, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #111318 0, var(--bg) 55%);
+      background: radial-gradient(circle at top, #111318 0, var(--bg) 60%);
       color: var(--textMain);
+      overflow-x: hidden;
     }
+
+    /* Arka plan canvas'ı tüm sayfanın arkasında */
+    canvas#bgCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
     .wrapper {
-      max-width: 900px;
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 32px 18px 48px;
+      padding: 32px 18px 56px;
     }
+
+    .logo-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-bottom: 24px;
+    }
+
+    .logo-glass {
+      width: 120px;
+      height: 120px;
+      border-radius: 36px;
+      background: radial-gradient(circle at 20% 0%, rgba(0,245,255,0.3), transparent 55%),
+                  #050608;
+      border: 1.5px solid rgba(0,245,255,0.65);
+      box-shadow:
+        0 0 40px rgba(0,245,255,0.45),
+        0 0 90px rgba(0,255,163,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .logo-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 20px;
+      background: radial-gradient(circle at 20% 0%, var(--accentB), var(--accentA));
+      box-shadow: 0 0 32px rgba(0,245,255,0.9);
+      position: relative;
+    }
+
+    .logo-icon::before {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border-radius: 16px;
+      border: 1.5px solid rgba(0,0,0,0.55);
+      box-shadow: inset 0 0 12px rgba(0,0,0,0.45);
+    }
+
+    .logo-foot {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: #ffffff;
+    }
+
+    .logo-title {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin: 0;
+    }
+
+    .logo-subtitle {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: #8e95a5;
+      text-align: center;
+    }
+
     .card {
       background: var(--card);
       border-radius: 24px;
-      border: 1px solid #20232a;
-      padding: 28px 22px 32px;
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--borderSoft);
+      padding: 26px 22px 32px;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.65);
     }
+
+    .accent-bar {
+      width: 80px;
+      height: 4px;
+      border-radius: 999px;
+      margin: 0 auto 24px;
+      background: linear-gradient(90deg, var(--accentA), var(--accentB));
+    }
+
     h1 {
-      font-size: 28px;
-      margin: 0 0 12px;
+      font-size: 24px;
+      margin: 0 0 10px;
       text-align: center;
     }
+
     h2 {
-      font-size: 20px;
-      margin: 28px 0 10px;
+      font-size: 19px;
+      margin: 26px 0 10px;
     }
+
     h3 {
       font-size: 16px;
-      margin: 20px 0 8px;
+      margin: 18px 0 8px;
     }
+
     p {
       font-size: 14px;
-      line-height: 1.65;
+      line-height: 1.7;
       color: var(--textSub);
       margin: 8px 0;
     }
+
     ul {
       padding-left: 20px;
       color: var(--textSub);
       font-size: 14px;
-      line-height: 1.65;
+      line-height: 1.7;
+      margin: 4px 0 10px;
     }
-    .accent-bar {
-      width: 72px;
-      height: 4px;
-      border-radius: 999px;
-      margin: 0 auto 22px;
-      background: linear-gradient(90deg, var(--accentA), var(--accentB));
-    }
+
+    strong { color: #e4e7f1; }
+
     .footer {
       margin-top: 26px;
       font-size: 12px;
       text-align: center;
       color: #8e95a5;
     }
+
+    @media (max-width: 600px) {
+      .wrapper { padding: 24px 12px 40px; }
+      .card { padding: 22px 16px 26px; }
+    }
   </style>
 </head>
 <body>
+  <canvas id="bgCanvas"></canvas>
+
   <div class="wrapper">
+    <div class="logo-block">
+      <div class="logo-glass">
+        <div class="logo-icon">
+          <div class="logo-foot">👣</div>
+        </div>
+      </div>
+      <h2 class="logo-title">StepFit</h2>
+      <p class="logo-subtitle">
+        Built to keep your daily movement visible, measurable and motivating.
+      </p>
+    </div>
+
     <div class="card">
-      <h1>StepFit Privacy Policy</h1>
+      <h1>Privacy Policy</h1>
       <div class="accent-bar"></div>
 
       <p>
         This Privacy Policy explains how <strong>StepFit</strong> (“the App”)
-        handles your data. StepFit is designed and developed by
+        handles your information. StepFit is designed and developed by
         <strong>Iman Mirzazadegan</strong> as a personal pedometer and fitness
         companion. The App is intentionally built to minimize the amount of
         personal data collected and to keep your information primarily on your
         own device.
       </p>
 
-      <h2>1. Scope</h2>
+      <h2>1. Scope and role</h2>
       <p>
         This Policy applies to all versions of StepFit distributed through
         official app stores (such as Google Play) and covers all features
         available within the App, including step tracking, goals, history,
-        widgets, notifications and Health Connect integration.
+        widgets, notifications, and Health Connect integration.
       </p>
+      <p>
+        StepFit does not operate its own cloud backend. In normal use, your
+        data flows between:
+      </p>
+      <ul>
+        <li>your device sensors and the App,</li>
+        <li>the App and Health Connect (if you enable it),</li>
+        <li>local storage on your phone or tablet.</li>
+      </ul>
 
-      <h2>2. Data We Collect</h2>
+      <h2>2. Data we collect</h2>
 
       <h3>2.1 Step and activity data</h3>
       <p>
-        StepFit uses your device’s motion sensors (e.g. step counter sensor)
-        and/or Health Connect to read your daily step counts and related
-        activity metrics. These values are:
+        StepFit uses your device’s motion sensors (for example, the hardware
+        step counter) and, if enabled, Health Connect to read daily step
+        counts and related metrics. This may include:
       </p>
       <ul>
-        <li>stored locally on your device,</li>
-        <li>used to calculate statistics such as daily totals and history,</li>
-        <li>displayed in widgets and notifications for your convenience.</li>
+        <li>step count and timestamps,</li>
+        <li>derived distance estimates,</li>
+        <li>derived calorie estimates (if available),</li>
+        <li>widgets showing daily totals.</li>
+      </ul>
+      <p>
+        These values are stored locally on your device and used only inside
+        the App to:
+      </p>
+      <ul>
+        <li>display your current progress,</li>
+        <li>build your daily/weekly/monthly history,</li>
+        <li>trigger local goal notifications or reminders.</li>
       </ul>
       <p>
         <strong>We do not send your step data to our own servers.</strong>
-        All processing happens either on-device or through Health Connect,
-        according to the permissions you grant.
+        Any sync with cloud services (for example backups via your OS) is
+        controlled by your device and not by StepFit directly.
       </p>
 
       <h3>2.2 Profile and configuration data</h3>
       <p>
-        StepFit may optionally store profile information you provide, such as:
+        StepFit may optionally store data you provide, such as:
       </p>
       <ul>
-        <li>Name or nickname</li>
-        <li>Age, gender, height, weight</li>
-        <li>Preferred units (km / miles)</li>
-        <li>Daily step goal and reminder time</li>
+        <li>name or nickname,</li>
+        <li>age, gender, height, weight,</li>
+        <li>preferred units (kilometers or miles),</li>
+        <li>daily step goal, notification time and theme preferences.</li>
       </ul>
       <p>
-        This information is used only to personalize your experience, for
-        example:
+        This information is used purely to personalize your experience,
+        including:
       </p>
       <ul>
-        <li>calculating approximate distance or calories,</li>
-        <li>showing age‑appropriate statistics,</li>
-        <li>triggering reminders at the time you choose.</li>
+        <li>more accurate distance or calorie approximations,</li>
+        <li>goal‑related visuals and progress calculations,</li>
+        <li>choosing when reminders should be shown.</li>
       </ul>
       <p>
-        All of this data is stored locally using Android’s secure storage
-        mechanisms (DataStore / Room) and is not transmitted to external
-        servers by StepFit.
+        Profile and configuration data are stored using Android’s secure local
+        storage mechanisms (DataStore and Room). StepFit does not transmit
+        this information to any remote server owned by the developer.
       </p>
 
       <h3>2.3 Health Connect data</h3>
       <p>
-        If you connect StepFit to <strong>Health Connect</strong>, the App may
-        read the data types that you explicitly allow, such as:
+        When you choose to connect StepFit with <strong>Health Connect</strong>,
+        the App may read the data types that you explicitly grant access to,
+        such as:
       </p>
       <ul>
         <li>Steps</li>
@@ -152,94 +287,105 @@
         <li>Weight</li>
       </ul>
       <p>
-        StepFit uses this information only to display your activity inside the
-        app and to keep your local statistics aligned with your existing
-        health data. StepFit does not modify or delete external health records
-        unless you explicitly enable write permissions for supported types
-        (e.g. weight logs).
+        StepFit uses this information to:
       </p>
+      <ul>
+        <li>import steps from other apps and devices into your StepFit view,</li>
+        <li>keep your local totals close to your consolidated health records,</li>
+        <li>avoid double counting when both the sensor and Health Connect are active.</li>
+      </ul>
       <p>
-        Health Connect itself is operated by Google and is subject to Google’s
-        separate privacy and security policies.
+        StepFit requests only the permissions it needs for the features you
+        enable. You remain in full control and can revoke these permissions at
+        any time from Health Connect’s settings.
+      </p>
+
+      <h3>2.4 Diagnostic information</h3>
+      <p>
+        The App may collect anonymous, aggregated information such as crash
+        reports or basic performance metrics through standard platform tools.
+        These are used solely to improve stability and user experience and do
+        not include your personal profile, health data or step‑by‑step
+        history.
       </p>
 
       <h2>3. Notifications and reminders</h2>
       <p>
-        StepFit can schedule local notifications to remind you to move or to
-        inform you when you reach your daily goal. These notifications are
-        created and handled entirely on your device. No notification content
-        is sent to external servers by the App.
+        StepFit can schedule local notifications to remind you to move, drink
+        water, or highlight that you have reached your daily step goal. These
+        notifications are created and handled entirely on your device.
       </p>
-
-      <h2>4. Analytics and third‑party services</h2>
       <p>
-        At the time of this version, StepFit does not embed third‑party
-        advertising SDKs or behavior‑tracking analytics. If in the future
-        lightweight crash reporting or anonymous usage metrics are introduced
-        to improve stability and UX, this section of the Policy will be
-        updated to describe exactly what is collected and how it is processed.
+        You can disable or adjust notifications at any time from the in‑app
+        Settings or via the standard notification controls of your operating
+        system.
       </p>
 
-      <h2>5. Data retention and deletion</h2>
+      <h2>4. Data retention and deletion</h2>
       <p>
         Because StepFit stores data primarily on your device:
       </p>
       <ul>
         <li>
-          You may clear your history, reset today’s steps or modify your
-          profile directly from the app settings.
+          You can reset today’s steps, clear local history or adjust your
+          profile directly from the App’s settings.
         </li>
         <li>
-          Uninstalling the app removes all data stored by StepFit from your
-          device.
+          Uninstalling the App removes all StepFit data stored on the device.
         </li>
       </ul>
       <p>
-        If you use Health Connect, that platform may continue to hold your
-        data according to its own retention policy. You can manage Health
-        Connect records separately via the Health Connect app or system
-        settings.
+        If you also use Health Connect, data stored in Health Connect can be
+        managed and removed via the Health Connect app or system settings, and
+        is subject to Google’s privacy policies.
       </p>
 
-      <h2>6. Security</h2>
+      <h2>5. Security</h2>
       <p>
-        StepFit relies on Android’s security model and storage mechanisms.
-        While no mobile app can guarantee absolute security, StepFit:
+        StepFit relies on the security of the underlying mobile platform and
+        on well‑tested Android libraries. While no mobile app or system can
+        ever be 100% secure, StepFit follows these principles:
       </p>
       <ul>
-        <li>does not transmit your step or profile data to its own servers,</li>
         <li>
-          limits permissions to what is necessary for pedometer and
-          notification functionality,
+          limiting permissions to what is necessary for step counting,
+          notifications and optional integrations;
         </li>
         <li>
-          uses well‑known libraries and APIs from the Android Jetpack
-          ecosystem.
+          keeping user data local whenever possible, instead of central cloud
+          storage;
+        </li>
+        <li>
+          not embedding invasive advertising SDKs that secretly track your
+          behavior.
         </li>
       </ul>
 
-      <h2>7. Children’s privacy</h2>
+      <h2>6. Children’s privacy</h2>
       <p>
-        StepFit is not directed at children under the age of 13. If you are a
-        parent or guardian and believe that a child is using the App with
-        personal information that should not be collected, you can remove that
-        data by clearing the app settings or uninstalling the app on the
-        relevant device.
+        StepFit is not specifically targeted at children under 13 years of
+        age. If you are a parent or guardian and believe that a child is using
+        StepFit with personal information you do not wish to be stored, you
+        can remove that data by clearing the App’s data or uninstalling it on
+        the child’s device.
       </p>
 
-      <h2>8. Changes to this Policy</h2>
+      <h2>7. Changes to this Policy</h2>
       <p>
-        This Privacy Policy may be updated from time to time to reflect new
-        functionality, legal requirements, or improvements in how data is
-        handled. When significant changes are made, a new version of the
-        Policy will be published together with the app update.
+        This Privacy Policy may be updated to reflect new features, changes in
+        applicable laws, or improvements in how data is handled. When a
+        significant change occurs, a new version of the Policy will be
+        published together with the App update.
+      </p>
+      <p>
+        Your continued use of StepFit after these changes become effective
+        will be interpreted as acceptance of the updated Policy.
       </p>
 
-      <h2>9. Contact</h2>
+      <h2>8. Contact</h2>
       <p>
-        If you have any questions about this Privacy Policy, how StepFit uses
-        your data, or if you would like to suggest improvements, you can
-        contact the developer:
+        If you have any questions or concerns about this Privacy Policy or how
+        StepFit handles your data, you can contact the developer:
       </p>
       <p>
         <strong>Developer:</strong> Iman Mirzazadegan<br />
@@ -251,5 +397,48 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // Basit yavaş hareket eden partikül animasyonu
+    const canvas = document.getElementById("bgCanvas");
+    const ctx = canvas.getContext("2d");
+    let w, h;
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    const dots = [];
+    const DOT_COUNT = 40;
+    for (let i = 0; i < DOT_COUNT; i++) {
+      dots.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: 1.5 + Math.random() * 2.5,
+        dx: (Math.random() - 0.5) * 0.05,
+        dy: (Math.random() - 0.5) * 0.05
+      });
+    }
+
+    function loop() {
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = "rgba(0,245,255,0.55)";
+      dots.forEach(d => {
+        d.x += d.dx;
+        d.y += d.dy;
+        if (d.x < 0) d.x = w;
+        if (d.x > w) d.x = 0;
+        if (d.y < 0) d.y = h;
+        if (d.y > h) d.y = 0;
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      requestAnimationFrame(loop);
+    }
+    loop();
+  </script>
 </body>
 </html>
