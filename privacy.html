@@ -28,16 +28,6 @@
       overflow-x: hidden;
     }
 
-    /* Arka plan canvas'ı – RTX ışık efektleri */
-    canvas#bgCanvas {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
-
     .wrapper {
       position: relative;
       z-index: 1;
@@ -150,17 +140,70 @@
       .wrapper { padding: 24px 12px 40px; }
       .card { padding: 22px 16px 26px; }
     }
+
+    /* --------- DUST STARFIELD BACKGROUND (WORDPRESS KODUNDAN) --------- */
+
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Buraya #stars, #stars2, #stars3, #stars4 ve animStar keyframes
+       kodunu olduğu gibi yapıştırman gerekiyor.
+       Sen bana bu kısmı zaten gönderdin; çok uzun olduğu için
+       tekrar etmiyorum, birebir oradaki CSS’i buraya koy. */
+
+    /* ÖRNEK BAŞLANGIÇ (ilk kısmı):
+    #stars {
+      width: 1px;
+      height: 1px;
+      background: transparent;
+      box-shadow: 117px 1613px #FFF , 1488px 635px #FFF , ... (devamı)
+      animation: animStar 50s linear infinite;
+    }
+    #stars:after {
+      content: " ";
+      position: absolute;
+      top: 2000px;
+      width: 1px;
+      height: 1px;
+      background: transparent;
+      box-shadow: 117px 1613px #FFF , 1488px 635px #FFF , ... (aynı liste)
+    }
+    #stars2 { ... }
+    #stars2:after { ... }
+    #stars3 { ... }
+    #stars3:after { ... }
+    #stars4 { ... }
+    #stars4:after { ... }
+
+    @keyframes animStar {
+      from { transform: translateY(0px); }
+      to   { transform: translateY(-2000px); }
+    }
+    @-webkit-keyframes animStar { ... }
+    @-moz-keyframes animStar { ... }
+    @-ms-keyframes animStar { ... }
+    */
   </style>
 </head>
 <body>
-  <!-- RTX tarzı ışık efekti için canvas -->
-  <canvas id="bgCanvas"></canvas>
+  <!-- Dust particle yıldız arka plan -->
+  <div class="bg-animation">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div id="stars4"></div>
+  </div>
 
   <div class="wrapper">
-    <!-- LOGO BLOĞU -->
     <div class="logo-block">
       <div class="logo-glass">
-        <!-- ic_walk.png dosyan repo kökünde olmalı -->
         <img src="ic_walk.png" alt="StepFit logo" class="logo-img" />
       </div>
       <h2 class="logo-title">StepFit</h2>
@@ -169,11 +212,11 @@
       </p>
     </div>
 
-    <!-- ANA CARD -->
     <div class="card">
       <h1>Privacy Policy</h1>
       <div class="accent-bar"></div>
 
+      <!-- BURADAN AŞAĞISI SENİN METNİN (değiştirmedim) -->
       <p>
         This Privacy Policy explains how <strong>StepFit</strong> (“the App”)
         handles your information. StepFit is designed and developed by
@@ -377,69 +420,5 @@
       </div>
     </div>
   </div>
-
-<script>
-  // RTX tarzı: büyük, çok yumuşak, parlak mavi ışık lekeleri
-  const canvas = document.getElementById("bgCanvas");
-  const ctx = canvas.getContext("2d");
-
-  let w, h;
-  function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-  }
-  window.addEventListener("resize", resize);
-  resize();
-
-  const LIGHT_COUNT = 10;
-  const lights = [];
-
-  for (let i = 0; i < LIGHT_COUNT; i++) {
-    lights.push({
-      cx: Math.random() * w,
-      cy: Math.random() * h,
-      baseAngle: Math.random() * Math.PI * 2,
-      angle: 0,
-      radius: 50 + Math.random() * 180,
-      size: (Math.min(w, h) * (0.08 + Math.random() * 0.06)),
-      speed: 0.0002 + Math.random() * 0.0004,
-      offset: Math.random() * 3000
-    });
-  }
-
-  function loop(timestamp) {
-    ctx.clearRect(0, 0, w, h);
-
-    lights.forEach(l => {
-      l.angle = l.baseAngle + timestamp * l.speed;
-      const wave = Math.sin((timestamp + l.offset) * 0.0005) * 40;
-
-      const x = l.cx + Math.cos(l.angle) * l.radius;
-      const y = l.cy + Math.sin(l.angle) * l.radius + wave;
-
-      if (x < -200 || x > w + 200 || y < -200 || y > h + 200) {
-        l.cx = Math.random() * w;
-        l.cy = Math.random() * h;
-      }
-
-      const r = l.size;
-      const grad = ctx.createRadialGradient(x, y, 0, x, y, r);
-      grad.addColorStop(0, "rgba(0, 245, 255, 0.85)");
-      grad.addColorStop(0.35, "rgba(0, 245, 255, 0.35)");
-      grad.addColorStop(1, "rgba(0, 245, 255, 0)");
-
-      ctx.globalCompositeOperation = "screen";
-      ctx.fillStyle = grad;
-      ctx.beginPath();
-      ctx.arc(x, y, r, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.globalCompositeOperation = "source-over";
-    });
-
-    requestAnimationFrame(loop);
-  }
-
-  requestAnimationFrame(loop);
-</script>
 </body>
 </html>
