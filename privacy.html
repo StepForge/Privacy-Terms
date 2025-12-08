@@ -28,6 +28,11 @@
       overflow-x: hidden;
     }
 
+    body {
+      position: relative;
+      min-height: 100vh;
+    }
+
     .wrapper {
       position: relative;
       z-index: 1;
@@ -141,9 +146,18 @@
       .card { padding: 22px 16px 26px; }
     }
 
-    /* --------- DUST STARFIELD BACKGROUND (WORDPRESS KODUNDAN) --------- */
+    /* ----- Dust starfield background (sabit) ----- */
 
-   .bg-animation {
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+.bg-animation {
     position: relative;
     top: 0;
     left: 0;
@@ -276,7 +290,7 @@
   </style>
 </head>
 <body>
-  <!-- Dust particle yıldız arka plan -->
+  <!-- Yıldız arka plan -->
   <div class="bg-animation">
     <div id="stars"></div>
     <div id="stars2"></div>
@@ -284,224 +298,226 @@
     <div id="stars4"></div>
   </div>
 
-  <div class="wrapper">
-    <div class="logo-block">
-      <div class="logo-glass">
-        <img src="ic_walk.png" alt="StepFit logo" class="logo-img" />
+  <!-- İçerik -->
+  <main style="min-height: 100vh; display:flex; align-items:flex-start; justify-content:center;">
+    <div class="wrapper">
+      <div class="logo-block">
+        <div class="logo-glass">
+          <img src="ic_walk.png" alt="StepFit logo" class="logo-img" />
+        </div>
+        <h2 class="logo-title">StepFit</h2>
+        <p class="logo-subtitle">
+          Built to keep your daily movement visible, measurable and motivating.
+        </p>
       </div>
-      <h2 class="logo-title">StepFit</h2>
-      <p class="logo-subtitle">
-        Built to keep your daily movement visible, measurable and motivating.
-      </p>
-    </div>
 
-    <div class="card">
-      <h1>Privacy Policy</h1>
-      <div class="accent-bar"></div>
+      <div class="card">
+        <h1>Privacy Policy</h1>
+        <div class="accent-bar"></div>
 
-      <!-- BURADAN AŞAĞISI SENİN METNİN (değiştirmedim) -->
-      <p>
-        This Privacy Policy explains how <strong>StepFit</strong> (“the App”)
-        handles your information. StepFit is designed and developed by
-        <strong>Iman Mirzazadegan</strong> as a personal pedometer and fitness
-        companion. The App is intentionally built to minimize the amount of
-        personal data collected and to keep your information primarily on your
-        own device.
-      </p>
+        <p>
+          This Privacy Policy explains how <strong>StepFit</strong> (“the App”)
+          handles your information. StepFit is designed and developed by
+          <strong>Iman Mirzazadegan</strong> as a personal pedometer and fitness
+          companion. The App is intentionally built to minimize the amount of
+          personal data collected and to keep your information primarily on your
+          own device.
+        </p>
 
-      <h2>1. Scope and role</h2>
-      <p>
-        This Policy applies to all versions of StepFit distributed through
-        official app stores (such as Google Play) and covers all features
-        available within the App, including step tracking, goals, history,
-        widgets, notifications, and Health Connect integration.
-      </p>
-      <p>
-        StepFit does not operate its own cloud backend. In normal use, your
-        data flows between:
-      </p>
-      <ul>
-        <li>your device sensors and the App,</li>
-        <li>the App and Health Connect (if you enable it),</li>
-        <li>local storage on your phone or tablet.</li>
-      </ul>
+        <h2>1. Scope and role</h2>
+        <p>
+          This Policy applies to all versions of StepFit distributed through
+          official app stores (such as Google Play) and covers all features
+          available within the App, including step tracking, goals, history,
+          widgets, notifications, and Health Connect integration.
+        </p>
+        <p>
+          StepFit does not operate its own cloud backend. In normal use, your
+          data flows between:
+        </p>
+        <ul>
+          <li>your device sensors and the App,</li>
+          <li>the App and Health Connect (if you enable it),</li>
+          <li>local storage on your phone or tablet.</li>
+        </ul>
 
-      <h2>2. Data we collect</h2>
+        <h2>2. Data we collect</h2>
 
-      <h3>2.1 Step and activity data</h3>
-      <p>
-        StepFit uses your device’s motion sensors (for example, the hardware
-        step counter) and, if enabled, Health Connect to read daily step
-        counts and related metrics. This may include:
-      </p>
-      <ul>
-        <li>step count and timestamps,</li>
-        <li>derived distance estimates,</li>
-        <li>derived calorie estimates (if available),</li>
-        <li>widgets showing daily totals.</li>
-      </ul>
-      <p>
-        These values are stored locally on your device and used only inside
-        the App to:
-      </p>
-      <ul>
-        <li>display your current progress,</li>
-        <li>build your daily/weekly/monthly history,</li>
-        <li>trigger local goal notifications or reminders.</li>
-      </ul>
-      <p>
-        <strong>We do not send your step data to our own servers.</strong>
-        Any sync with cloud services (for example backups via your OS) is
-        controlled by your device and not by StepFit directly.
-      </p>
+        <h3>2.1 Step and activity data</h3>
+        <p>
+          StepFit uses your device’s motion sensors (for example, the hardware
+          step counter) and, if enabled, Health Connect to read daily step
+          counts and related metrics. This may include:
+        </p>
+        <ul>
+          <li>step count and timestamps,</li>
+          <li>derived distance estimates,</li>
+          <li>derived calorie estimates (if available),</li>
+          <li>widgets showing daily totals.</li>
+        </ul>
+        <p>
+          These values are stored locally on your device and used only inside
+          the App to:
+        </p>
+        <ul>
+          <li>display your current progress,</li>
+          <li>build your daily/weekly/monthly history,</li>
+          <li>trigger local goal notifications or reminders.</li>
+        </ul>
+        <p>
+          <strong>We do not send your step data to our own servers.</strong>
+          Any sync with cloud services (for example backups via your OS) is
+          controlled by your device and not by StepFit directly.
+        </p>
 
-      <h3>2.2 Profile and configuration data</h3>
-      <p>
-        StepFit may optionally store data you provide, such as:
-      </p>
-      <ul>
-        <li>name or nickname,</li>
-        <li>age, gender, height, weight,</li>
-        <li>preferred units (kilometers or miles),</li>
-        <li>daily step goal, notification time and theme preferences.</li>
-      </ul>
-      <p>
-        This information is used purely to personalize your experience,
-        including:
-      </p>
-      <ul>
-        <li>more accurate distance or calorie approximations,</li>
-        <li>goal‑related visuals and progress calculations,</li>
-        <li>choosing when reminders should be shown.</li>
-      </ul>
-      <p>
-        Profile and configuration data are stored using Android’s secure local
-        storage mechanisms (DataStore and Room). StepFit does not transmit
-        this information to any remote server owned by the developer.
-      </p>
+        <h3>2.2 Profile and configuration data</h3>
+        <p>
+          StepFit may optionally store data you provide, such as:
+        </p>
+        <ul>
+          <li>name or nickname,</li>
+          <li>age, gender, height, weight,</li>
+          <li>preferred units (kilometers or miles),</li>
+          <li>daily step goal, notification time and theme preferences.</li>
+        </ul>
+        <p>
+          This information is used purely to personalize your experience,
+          including:
+        </p>
+        <ul>
+          <li>more accurate distance or calorie approximations,</li>
+          <li>goal‑related visuals and progress calculations,</li>
+          <li>choosing when reminders should be shown.</li>
+        </ul>
+        <p>
+          Profile and configuration data are stored using Android’s secure local
+          storage mechanisms (DataStore and Room). StepFit does not transmit
+          this information to any remote server owned by the developer.
+        </p>
 
-      <h3>2.3 Health Connect data</h3>
-      <p>
-        When you choose to connect StepFit with <strong>Health Connect</strong>,
-        the App may read the data types that you explicitly grant access to,
-        such as:
-      </p>
-      <ul>
-        <li>Steps</li>
-        <li>Distance</li>
-        <li>Total calories burned</li>
-        <li>Weight</li>
-      </ul>
-      <p>
-        StepFit uses this information to:
-      </p>
-      <ul>
-        <li>import steps from other apps and devices into your StepFit view,</li>
-        <li>keep your local totals close to your consolidated health records,</li>
-        <li>avoid double counting when both the sensor and Health Connect are active.</li>
-      </ul>
-      <p>
-        StepFit requests only the permissions it needs for the features you
-        enable. You remain in full control and can revoke these permissions at
-        any time from Health Connect’s settings.
-      </p>
+        <h3>2.3 Health Connect data</h3>
+        <p>
+          When you choose to connect StepFit with <strong>Health Connect</strong>,
+          the App may read the data types that you explicitly grant access to,
+          such as:
+        </p>
+        <ul>
+          <li>Steps</li>
+          <li>Distance</li>
+          <li>Total calories burned</li>
+          <li>Weight</li>
+        </ul>
+        <p>
+          StepFit uses this information to:
+        </p>
+        <ul>
+          <li>import steps from other apps and devices into your StepFit view,</li>
+          <li>keep your local totals close to your consolidated health records,</li>
+          <li>avoid double counting when both the sensor and Health Connect are active.</li>
+        </ul>
+        <p>
+          StepFit requests only the permissions it needs for the features you
+          enable. You remain in full control and can revoke these permissions at
+          any time from Health Connect’s settings.
+        </p>
 
-      <h3>2.4 Diagnostic information</h3>
-      <p>
-        The App may collect anonymous, aggregated information such as crash
-        reports or basic performance metrics through standard platform tools.
-        These are used solely to improve stability and user experience and do
-        not include your personal profile, health data or step‑by‑step
-        history.
-      </p>
+        <h3>2.4 Diagnostic information</h3>
+        <p>
+          The App may collect anonymous, aggregated information such as crash
+          reports or basic performance metrics through standard platform tools.
+          These are used solely to improve stability and user experience and do
+          not include your personal profile, health data or step‑by‑step
+          history.
+        </p>
 
-      <h2>3. Notifications and reminders</h2>
-      <p>
-        StepFit can schedule local notifications to remind you to move, drink
-        water, or highlight that you have reached your daily step goal. These
-        notifications are created and handled entirely on your device.
-      </p>
-      <p>
-        You can disable or adjust notifications at any time from the in‑app
-        Settings or via the standard notification controls of your operating
-        system.
-      </p>
+        <h2>3. Notifications and reminders</h2>
+        <p>
+          StepFit can schedule local notifications to remind you to move, drink
+          water, or highlight that you have reached your daily step goal. These
+          notifications are created and handled entirely on your device.
+        </p>
+        <p>
+          You can disable or adjust notifications at any time from the in‑app
+          Settings or via the standard notification controls of your operating
+          system.
+        </p>
 
-      <h2>4. Data retention and deletion</h2>
-      <p>
-        Because StepFit stores data primarily on your device:
-      </p>
-      <ul>
-        <li>
-          You can reset today’s steps, clear local history or adjust your
-          profile directly from the App’s settings.
-        </li>
-        <li>
-          Uninstalling the App removes all StepFit data stored on the device.
-        </li>
-      </ul>
-      <p>
-        If you also use Health Connect, data stored in Health Connect can be
-        managed and removed via the Health Connect app or system settings, and
-        is subject to Google’s privacy policies.
-      </p>
+        <h2>4. Data retention and deletion</h2>
+        <p>
+          Because StepFit stores data primarily on your device:
+        </p>
+        <ul>
+          <li>
+            You can reset today’s steps, clear local history or adjust your
+            profile directly from the App’s settings.
+          </li>
+          <li>
+            Uninstalling the App removes all StepFit data stored on the device.
+          </li>
+        </ul>
+        <p>
+          If you also use Health Connect, data stored in Health Connect can be
+          managed and removed via the Health Connect app or system settings, and
+          is subject to Google’s privacy policies.
+        </p>
 
-      <h2>5. Security</h2>
-      <p>
-        StepFit relies on the security of the underlying mobile platform and
-        on well‑tested Android libraries. While no mobile app or system can
-        ever be 100% secure, StepFit follows these principles:
-      </p>
-      <ul>
-        <li>
-          limiting permissions to what is necessary for step counting,
-          notifications and optional integrations;
-        </li>
-        <li>
-          keeping user data local whenever possible, instead of central cloud
-          storage;
-        </li>
-        <li>
-          not embedding invasive advertising SDKs that secretly track your
-          behavior.
-        </li>
-      </ul>
+        <h2>5. Security</h2>
+        <p>
+          StepFit relies on the security of the underlying mobile platform and
+          on well‑tested Android libraries. While no mobile app or system can
+          ever be 100% secure, StepFit follows these principles:
+        </p>
+        <ul>
+          <li>
+            limiting permissions to what is necessary for step counting,
+            notifications and optional integrations;
+          </li>
+          <li>
+            keeping user data local whenever possible, instead of central cloud
+            storage;
+          </li>
+          <li>
+            not embedding invasive advertising SDKs that secretly track your
+            behavior.
+          </li>
+        </ul>
 
-      <h2>6. Children’s privacy</h2>
-      <p>
-        StepFit is not specifically targeted at children under 13 years of
-        age. If you are a parent or guardian and believe that a child is using
-        StepFit with personal information you do not wish to be stored, you
-        can remove that data by clearing the App’s data or uninstalling it on
-        the child’s device.
-      </p>
+        <h2>6. Children’s privacy</h2>
+        <p>
+          StepFit is not specifically targeted at children under 13 years of
+          age. If you are a parent or guardian and believe that a child is using
+          StepFit with personal information you do not wish to be stored, you
+          can remove that data by clearing the App’s data or uninstalling it on
+          the child’s device.
+        </p>
 
-      <h2>7. Changes to this Policy</h2>
-      <p>
-        This Privacy Policy may be updated to reflect new features, changes in
-        applicable laws, or improvements in how data is handled. When a
-        significant change occurs, a new version of the Policy will be
-        published together with the App update.
-      </p>
-      <p>
-        Your continued use of StepFit after these changes become effective
-        will be interpreted as acceptance of the updated Policy.
-      </p>
+        <h2>7. Changes to this Policy</h2>
+        <p>
+          This Privacy Policy may be updated to reflect new features, changes in
+          applicable laws, or improvements in how data is handled. When a
+          significant change occurs, a new version of the Policy will be
+          published together with the App update.
+        </p>
+        <p>
+          Your continued use of StepFit after these changes become effective
+          will be interpreted as acceptance of the updated Policy.
+        </p>
 
-      <h2>8. Contact</h2>
-      <p>
-        If you have any questions or concerns about this Privacy Policy or how
-        StepFit handles your data, you can contact the developer:
-      </p>
-      <p>
-        <strong>Developer:</strong> Iman Mirzazadegan<br />
-        <strong>App:</strong> StepFit
-      </p>
+        <h2>8. Contact</h2>
+        <p>
+          If you have any questions or concerns about this Privacy Policy or how
+          StepFit handles your data, you can contact the developer:
+        </p>
+        <p>
+          <strong>Developer:</strong> Iman Mirzazadegan<br />
+          <strong>App:</strong> StepFit
+        </p>
 
-      <div class="footer">
-        Last updated: 2025‑01‑01
+        <div class="footer">
+          Last updated: 2025‑01‑01
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>
 </html>
