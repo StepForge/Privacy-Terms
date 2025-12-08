@@ -403,7 +403,7 @@
   </div>
 
 <script>
-  // Küçük, parlak mavi, çok yumuşak ve yavaş hareket eden partiküller
+  // RTX tarzı: büyük, çok yumuşak, parlak mavi ışık lekeleri
   const canvas = document.getElementById("bgCanvas");
   const ctx = canvas.getContext("2d");
 
@@ -415,51 +415,62 @@
   window.addEventListener("resize", resize);
   resize();
 
-  const DOT_COUNT = 35; // daha az, temiz görüntü
-  const dots = [];
+  // Az sayıda büyük ışık pulu
+  const LIGHT_COUNT = 10;
+  const lights = [];
 
-  for (let i = 0; i < DOT_COUNT; i++) {
-    const angle = Math.random() * Math.PI * 2;
-    const radius = 30 + Math.random() * 110; // hareket yarıçapı
-    dots.push({
+  for (let i = 0; i < LIGHT_COUNT; i++) {
+    lights.push({
       cx: Math.random() * w,
       cy: Math.random() * h,
-      baseAngle: angle,
-      angle: angle,
-      radius: radius,
-      r: 1.2 + Math.random() * 1.6, // küçük ışık noktası
-      speed: 0.0004 + Math.random() * 0.0008, // çok yavaş
-      offset: Math.random() * 2000
+      baseAngle: Math.random() * Math.PI * 2,
+      angle: 0,
+      // hareket yarıçapı: sahnenin genişliğine bağlı, genişçe geziyor
+      radius: 50 + Math.random() * 180,
+      // ışık boyutu: ekranın %8 – %14’ü kadar
+      size: (Math.min(w, h) * (0.08 + Math.random() * 0.06)),
+      speed: 0.0002 + Math.random() * 0.0004, // çok yavaş
+      offset: Math.random() * 3000
     });
   }
 
   function loop(timestamp) {
     ctx.clearRect(0, 0, w, h);
 
-    dots.forEach(d => {
-      // dairesel + hafif sinüs dalgası
-      d.angle = d.baseAngle + timestamp * d.speed;
-      const wave = Math.sin((timestamp + d.offset) * 0.0012) * 8;
+    // Arka planı hafif koyu yapıp ışığın etkisini güçlendirelim
+    // (sayfanın kendi background'ına fazla dokunmuyoruz)
+    // ctx.fillStyle = "rgba(5, 6, 8, 0.1)";
+    // ctx.fillRect(0, 0, w, h);
 
-      let x = d.cx + Math.cos(d.angle) * d.radius;
-      let y = d.cy + Math.sin(d.angle) * d.radius + wave;
+    lights.forEach(l => {
+      // hafif dairesel + sinüs dalgalı hareket
+      l.angle = l.baseAngle + timestamp * l.speed;
+      const wave = Math.sin((timestamp + l.offset) * 0.0005) * 40;
 
-      // ekran dışına çok taşarsa merkezi yenile
-      if (x < -60 || x > w + 60 || y < -60 || y > h + 60) {
-        d.cx = Math.random() * w;
-        d.cy = Math.random() * h;
+      const x = l.cx + Math.cos(l.angle) * l.radius;
+      const y = l.cy + Math.sin(l.angle) * l.radius + wave;
+
+      // ekran dışına çok taşarsa merkezini yenile (ışık hep yakınlarda dursun)
+      if (x < -200 || x > w + 200 || y < -200 || y > h + 200) {
+        l.cx = Math.random() * w;
+        l.cy = Math.random() * h;
       }
 
-      // parlak mavi küçük glow
-      const grad = ctx.createRadialGradient(x, y, 0, x, y, d.r * 5);
-      // merkez: parlak mavi, dışa doğru transparan
-      grad.addColorStop(0, "rgba(0, 245, 255, 0.9)");
+      const r = l.size;
+
+      // RTX hissi için çok yumuşak, geniş radial gradient
+      const grad = ctx.createRadialGradient(x, y, 0, x, y, r);
+      // merkez: parlak mavi-yeşil
+      grad.addColorStop(0, "rgba(0, 245, 255, 0.85)");
+      grad.addColorStop(0.35, "rgba(0, 245, 255, 0.35)");
       grad.addColorStop(1, "rgba(0, 245, 255, 0)");
 
+      ctx.globalCompositeOperation = "screen"; // ışıklar üst üste geldiğinde parlaklaşsın
       ctx.fillStyle = grad;
       ctx.beginPath();
-      ctx.arc(x, y, d.r * 5, 0, Math.PI * 2);
+      ctx.arc(x, y, r, 0, Math.PI * 2);
       ctx.fill();
+      ctx.globalCompositeOperation = "source-over";
     });
 
     requestAnimationFrame(loop);
