@@ -5,6 +5,8 @@
   <title>StepFit – Privacy Policy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
+  <meta name="robots" content="index,follow" />
+
   <style>
     :root{
       --bg:#050608;
@@ -13,120 +15,182 @@
       --accentB:#00F5FF;
       --textMain:#FFFFFF;
       --textSub:#BFC4D0;
-      --borderSoft:#20232a;
       --muted:#8e95a5;
+      --borderSoft:#20232a;
+      --chip:#111318;
+      --softLine: rgba(255,255,255,0.08);
     }
+
     *{box-sizing:border-box}
+
     html,body{
       margin:0;padding:0;height:100%;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text",Roboto,"Segoe UI",sans-serif;
-      background: radial-gradient(circle at top, #111318 0, var(--bg) 60%);
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text",Roboto,"Segoe UI",sans-serif;
+      background: radial-gradient(circle at top,#111318 0,var(--bg) 60%);
       color:var(--textMain);
       overflow-x:hidden;
     }
 
-    /* --- Starfield (geri geldi) --- */
-    .bg-animation{position:fixed; inset:0; pointer-events:none; z-index:0;}
+    /* --- Starfield background (returns the “stars”) --- */
+    .bg-animation{
+      position:fixed; inset:0;
+      pointer-events:none;
+      z-index:0;
+      opacity:1;
+    }
     .stars, .stars2, .stars3{
-      position:absolute; inset:-200px; background-repeat:repeat;
-      animation: drift 70s linear infinite;
-      opacity: .55;
+      position:absolute; inset:-2000px 0 0 0;
+      height:4000px;
+      background-repeat:repeat;
+      animation: drift 80s linear infinite;
+      opacity:0.35;
     }
     .stars{
-      background-image:
-        radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,.85) 40%, transparent 45%),
-        radial-gradient(1px 1px at 35% 62%, rgba(255,255,255,.75) 40%, transparent 45%),
-        radial-gradient(1px 1px at 78% 28%, rgba(255,255,255,.75) 40%, transparent 45%),
-        radial-gradient(1px 1px at 88% 72%, rgba(255,255,255,.70) 40%, transparent 45%),
-        radial-gradient(1px 1px at 55% 12%, rgba(255,255,255,.75) 40%, transparent 45%),
-        radial-gradient(1px 1px at 6% 78%, rgba(255,255,255,.70) 40%, transparent 45%);
-      background-size: 420px 420px;
-      filter: drop-shadow(0 0 6px rgba(0,245,255,.18));
+      background-image: radial-gradient(rgba(255,255,255,0.95) 1px, transparent 1px);
+      background-size: 120px 120px;
+      opacity: 0.25;
+      animation-duration: 110s;
     }
     .stars2{
-      animation-duration: 110s;
-      opacity: .35;
-      background-image:
-        radial-gradient(2px 2px at 18% 30%, rgba(255,255,255,.75) 40%, transparent 45%),
-        radial-gradient(2px 2px at 62% 40%, rgba(255,255,255,.65) 40%, transparent 45%),
-        radial-gradient(2px 2px at 82% 10%, rgba(255,255,255,.55) 40%, transparent 45%),
-        radial-gradient(2px 2px at 80% 86%, rgba(255,255,255,.55) 40%, transparent 45%);
-      background-size: 620px 620px;
-      filter: drop-shadow(0 0 10px rgba(0,255,163,.12));
+      background-image: radial-gradient(rgba(255,255,255,0.85) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: 0.20;
+      animation-duration: 80s;
     }
     .stars3{
-      animation-duration: 160s;
-      opacity: .18;
-      background-image:
-        radial-gradient(3px 3px at 45% 55%, rgba(255,255,255,.55) 40%, transparent 45%),
-        radial-gradient(3px 3px at 15% 85%, rgba(255,255,255,.45) 40%, transparent 45%),
-        radial-gradient(3px 3px at 75% 25%, rgba(255,255,255,.45) 40%, transparent 45%);
-      background-size: 860px 860px;
+      background-image: radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px);
+      background-size: 55px 55px;
+      opacity: 0.12;
+      animation-duration: 55s;
     }
     @keyframes drift{
-      from{ transform: translateY(0px); }
-      to{ transform: translateY(-260px); }
+      from { background-position: 0 0; }
+      to   { background-position: 0 -2000px; }
     }
 
     .wrapper{
-      position:relative; z-index:1;
-      max-width:980px; margin:0 auto;
-      padding: 12px 12px 40px;
+      position:relative;
+      z-index:1;
+      max-width: 980px;
+      margin:0 auto;
+      padding: 12px 12px 44px;
     }
+
     .logo-block{
-      display:flex; align-items:center; justify-content:center; flex-direction:column;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
       margin: 8px 0 18px;
     }
+
     .logo-glass{
       width:120px;height:120px;border-radius:36px;
       background:#050608;
       border:1.5px solid rgba(0,245,255,0.75);
-      box-shadow:0 0 36px rgba(0,245,255,0.35),0 0 70px rgba(0,255,163,0.22);
-      display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+      box-shadow: 0 0 36px rgba(0,245,255,0.35), 0 0 70px rgba(0,255,163,0.22);
+      display:flex;align-items:center;justify-content:center;
+      margin-bottom:14px;
     }
     .logo-img{width:110px;height:110px;border-radius:20px;object-fit:contain;}
+
     .logo-title{font-size:26px;font-weight:800;letter-spacing:.02em;margin:0;}
-    .logo-subtitle{
-      margin:6px 0 0;
-      font-size:13px;color:var(--muted);
-      text-align:center;max-width:60ch;
+    .logo-subtitle{margin:6px 0 0;font-size:13px;color:var(--muted);text-align:center;max-width:62ch;}
+
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color:var(--textSub);
+      font-size:12px;
+      margin-top:10px;
     }
+
     .card{
       background:var(--card);
       border-radius:24px;
       border:1px solid var(--borderSoft);
-      padding:26px 22px 30px;
-      box-shadow:0 22px 60px rgba(0,0,0,.65);
+      padding: 26px 22px 30px;
+      box-shadow: 0 22px 60px rgba(0,0,0,0.65);
     }
+
     .accent-bar{
-      width:92px;height:4px;border-radius:999px;margin:0 auto 18px;
-      background:linear-gradient(90deg,var(--accentA),var(--accentB));
+      width:92px;height:4px;border-radius:999px;
+      margin: 0 auto 18px;
+      background: linear-gradient(90deg,var(--accentA),var(--accentB));
     }
+
     h1{font-size:24px;margin:0 0 10px;text-align:center;letter-spacing:.01em;}
     h2{font-size:18px;margin:22px 0 10px;letter-spacing:.01em;}
     h3{font-size:15px;margin:14px 0 8px;}
-    p{font-size:14px;line-height:1.7;color:var(--textSub);margin:8px 0;}
-    ul{padding-left:20px;color:var(--textSub);font-size:14px;line-height:1.7;margin:6px 0 10px;}
+    p{font-size:14px;line-height:1.75;color:var(--textSub);margin:8px 0;}
+    ul{padding-left:20px;color:var(--textSub);font-size:14px;line-height:1.75;margin:6px 0 10px;}
     li{margin:4px 0;}
     strong{color:#e8ecf8;}
     a{color:#8be9ff;text-decoration:none;border-bottom:1px dashed rgba(139,233,255,0.35);}
-    a:hover{border-bottom-color:rgba(139,233,255,0.8);}
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 10px;border-radius:999px;
-      border:1px solid rgba(255,255,255,0.08);
-      background:rgba(255,255,255,0.03);
-      color:var(--textSub);font-size:12px;line-height:1;margin-top:10px;
+    a:hover{border-bottom-color:rgba(139,233,255,0.85);}
+
+    .toc{
+      border:1px solid var(--softLine);
+      background: rgba(255,255,255,0.03);
+      border-radius:18px;
+      padding: 14px 14px;
+      margin: 12px 0 6px;
     }
+    .toc-title{
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 8px;
+      letter-spacing: .01em;
+    }
+    .toc ul{margin:0; padding-left:18px;}
+    .toc a{border-bottom:none}
+    .toc a:hover{border-bottom:none; text-decoration:underline}
+
+    .callout{
+      border:1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      border-radius:18px;
+      padding:14px 14px;
+      margin: 10px 0 6px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 10px 0 4px;
+    }
+    .mini{
+      border:1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.02);
+      border-radius:18px;
+      padding:14px 14px;
+    }
+    .mini b{display:block;color:#fff;margin-bottom:6px;font-size:13px;}
+    .mini p{margin:6px 0}
+
+    .hr{
+      height:1px;
+      background: rgba(255,255,255,0.08);
+      margin: 14px 0;
+      border-radius:999px;
+    }
+
     .footer{margin-top:20px;font-size:12px;text-align:center;color:var(--muted);}
-    @media (max-width:720px){
-      .wrapper{padding:10px 12px 34px;}
+
+    @media (max-width: 720px){
+      .wrapper{padding:10px 12px 36px;}
       .card{padding:22px 16px 24px;}
+      .grid{grid-template-columns:1fr;}
     }
   </style>
 </head>
 
 <body>
+  <!-- Star background -->
   <div class="bg-animation">
     <div class="stars"></div>
     <div class="stars2"></div>
@@ -136,11 +200,15 @@
   <div class="wrapper">
     <div class="logo-block">
       <div class="logo-glass">
-        <img src="https://stepfit0.github.io/Privacy-Terms/ic_walk.png" alt="StepFit logo" class="logo-img" />
+        <img
+          src="https://stepfit0.github.io/Privacy-Terms/ic_walk.png"
+          alt="StepFit logo"
+          class="logo-img"
+        />
       </div>
       <h2 class="logo-title">StepFit</h2>
       <p class="logo-subtitle">
-        Built to keep your daily movement visible, measurable, and motivating — with clear privacy choices.
+        Built to keep your daily movement visible, measurable, and motivating — with privacy-first defaults.
       </p>
       <div class="pill">Privacy Policy • Effective date: 2026‑01‑09</div>
     </div>
@@ -150,175 +218,347 @@
       <div class="accent-bar"></div>
 
       <p>
-        This Privacy Policy explains how <strong>StepFit</strong> (“the App”) handles information.
-        StepFit is developed by <strong>Iman Mirzazadegan</strong>.
-        The App is designed with a “local-first” approach: most of your data remains on your device.
-        Optional features may use third-party platforms such as <strong>Health Connect</strong> and <strong>Firebase</strong>
-        for cloud backup/restore and crash diagnostics.
+        This Privacy Policy (“Policy”) explains how <strong>StepFit</strong> (“StepFit”, “we”, “us”, or “the App”)
+        processes information when you install or use the App.
+        StepFit is developed and maintained by <strong>Iman Mirzazadegan</strong> (“Developer”).
       </p>
 
-      <h2>1. Scope</h2>
       <p>
-        This Policy applies to StepFit distributed through official app stores. It covers the features available in the App,
-        including step tracking, goals, history, widgets, notifications, water reminders and tracking, sleep tracking,
-        App Lock, and Sync &amp; Backup.
+        StepFit is designed to be practical and privacy-respecting. Most of your activity data is kept on your device.
+        Some optional features (such as <strong>Health Connect integration</strong> and <strong>cloud backup/restore</strong>)
+        may involve third-party services. This Policy explains what that means in plain language and in detail.
       </p>
 
-      <h2>2. Summary</h2>
-      <ul>
-        <li><strong>Local-first:</strong> StepFit stores most data locally (Room + DataStore).</li>
-        <li><strong>Permission-based:</strong> Health Connect access is optional and controlled by you.</li>
-        <li><strong>Optional cloud:</strong> Sync &amp; Backup uses Firebase services only if you use that feature.</li>
-        <li><strong>Clear controls:</strong> You can clear local data from the app; cloud backup management is separate.</li>
-      </ul>
+      <div class="toc">
+        <div class="toc-title">Contents</div>
+        <ul>
+          <li><a href="#scope">1. Scope</a></li>
+          <li><a href="#definitions">2. Definitions</a></li>
+          <li><a href="#summary">3. Summary (privacy at a glance)</a></li>
+          <li><a href="#data">4. Data we process</a></li>
+          <li><a href="#purposes">5. How we use data</a></li>
+          <li><a href="#storage">6. Where data is stored</a></li>
+          <li><a href="#sharing">7. Sharing & third parties</a></li>
+          <li><a href="#permissions">8. Permissions & device controls</a></li>
+          <li><a href="#retention">9. Retention, deletion, and “Clear Data”</a></li>
+          <li><a href="#security">10. Security</a></li>
+          <li><a href="#children">11. Children’s privacy</a></li>
+          <li><a href="#changes">12. Changes to this Policy</a></li>
+          <li><a href="#contact">13. Contact</a></li>
+        </ul>
+      </div>
 
-      <h2>3. Data categories</h2>
-
-      <h3>3.1 Step and activity data</h3>
+      <h2 id="scope">1. Scope</h2>
       <p>
-        StepFit can process step counts from device sensors and (if enabled) Health Connect. The App may store:
-      </p>
-      <ul>
-        <li>daily step totals per date,</li>
-        <li>optional hourly step snapshots (for hourly charts and detail views),</li>
-        <li>derived estimates shown in the UI (distance, calories).</li>
-      </ul>
-      <p>
-        Derived metrics are estimates and depend on device sensors and your optional profile information.
-      </p>
-
-      <h3>3.2 Hydration data</h3>
-      <p>
-        StepFit can store your daily water intake totals (ml) and reminder schedule settings (interval, active hours).
-        Water reminders are generated on your device.
+        This Policy applies to StepFit distributed through official channels (such as Google Play) and covers the features
+        available within the App, including step tracking, goals, history, widgets, notifications, water reminders and intake,
+        sleep tracking, App Lock, Health Connect integration, feedback/support flows, and Sync &amp; Backup.
       </p>
 
-      <h3>3.3 Sleep data</h3>
+      <h2 id="definitions">2. Definitions</h2>
       <p>
-        StepFit includes sleep tracking. Sleep sessions may be created manually or imported from Health Connect (if permitted).
-        Stored fields can include start/end time, duration, a quality score, and a “source” label
-        (for example “manual” or “health_connect”). Some devices/records may provide sleep stages.
-      </p>
-
-      <h3>3.4 Profile data you enter</h3>
-      <p>
-        Optional profile data can include name, birth date, gender, height, weight, and unit preferences (km/mi).
-        These help personalize the UI and improve estimates (for example distance/calories).
-      </p>
-
-      <h3>3.5 App Lock and security information</h3>
-      <p>
-        If you enable App Lock, StepFit stores local configuration (enabled flag, timeout, PIN, and optional security answers).
-        Biometric unlock uses Android’s biometric system; StepFit does not store biometric templates.
-      </p>
-
-      <h3>3.6 Settings</h3>
-      <p>
-        StepFit stores settings such as daily goal, theme, notification time, and reminder configurations.
-      </p>
-
-      <h3>3.7 Cloud backup and restore (optional)</h3>
-      <p>
-        StepFit offers optional cloud backup/restore using Firebase services. When enabled/used, the App can upload
-        a backup payload to your account’s storage path and later restore supported data.
+        To make this Policy easier to follow, we use the terms below:
       </p>
       <ul>
-        <li>Supported items can include step history and selected non-sensitive settings.</li>
-        <li>Sensitive fields (for example App Lock secrets and some profile fields) are intended to remain local-only.</li>
+        <li><strong>“Device data”</strong> means data stored locally on your phone/tablet (Room database, DataStore, app files).</li>
+        <li><strong>“Health Connect”</strong> means Google’s Health Connect platform that stores health data and manages app permissions.</li>
+        <li><strong>“Cloud backup”</strong> means optional storage of supported StepFit data in a cloud database (via Firebase services).</li>
+        <li><strong>“Personal data”</strong> means information that can identify you directly or indirectly (definitions vary by region).</li>
       </ul>
 
-      <h3>3.8 Diagnostics</h3>
+      <h2 id="summary">3. Summary (privacy at a glance)</h2>
+      <div class="grid">
+        <div class="mini">
+          <b>Default behavior</b>
+          <p>
+            StepFit stores most of your data on your device. Your daily steps, history, hydration logs, sleep logs,
+            and settings are stored locally so the app works without requiring an account.
+          </p>
+        </div>
+        <div class="mini">
+          <b>Optional features</b>
+          <p>
+            If you choose to enable them, StepFit can (a) read permitted health records from Health Connect and
+            (b) perform cloud backup/restore via Firebase. You can use StepFit without enabling either option.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p>
+          <strong>Important:</strong> StepFit does not sell your personal data. StepFit does not embed advertising SDKs designed
+          to track you across apps. If you use cloud backup, your backup is stored in cloud infrastructure to support restore.
+        </p>
+      </div>
+
+      <h2 id="data">4. Data we process</h2>
+
+      <h3>4.1 Steps and activity data (device sensors)</h3>
       <p>
-        StepFit may use crash diagnostics (for example Firebase Crashlytics) to improve reliability.
-        Crash reports typically include device/app technical information and error traces.
-        StepFit does not intentionally include your step history or health records inside crash reports.
-      </p>
-
-      <h2>4. How we use data</h2>
-      <ul>
-        <li>To display your progress (steps, goals, rings, widgets, and history).</li>
-        <li>To schedule and show notifications (daily reminder, water reminders, inactivity prompts, goal alerts).</li>
-        <li>To provide sleep and hydration views.</li>
-        <li>To enforce App Lock if enabled.</li>
-        <li>To perform backup and restore when you choose to use cloud sync.</li>
-        <li>To debug stability issues (crash diagnostics).</li>
-      </ul>
-
-      <h2>5. Storage locations</h2>
-
-      <h3>5.1 On-device storage</h3>
-      <p>
-        StepFit stores most information in app-private storage. Other apps cannot access it unless your device is compromised
-        or you explicitly share/export data.
-      </p>
-
-      <h3>5.2 Health Connect</h3>
-      <p>
-        When enabled, StepFit reads only the Health Connect record types you grant. Health Connect data is governed by Google’s
-        policies and your Health Connect settings.
-      </p>
-
-      <h3>5.3 Firebase services</h3>
-      <p>
-        If you use Sync &amp; Backup, StepFit uses Firebase for authentication and backup storage. If crash diagnostics are enabled,
-        StepFit may send crash events to Firebase Crashlytics.
-      </p>
-
-      <h2>6. Sharing</h2>
-      <p>
-        StepFit does not sell personal information. StepFit may share limited data with service providers only when you use features
-        that rely on them (Health Connect / Firebase / your email app for support).
-      </p>
-
-      <h2>7. Permissions</h2>
-      <p>
-        Permissions are used only for app functionality. Examples:
+        StepFit can read step counts from your device’s motion sensors (for example the step counter sensor).
+        StepFit may store your step totals to provide history, widgets, and progress visuals.
       </p>
       <ul>
-        <li><strong>Activity Recognition</strong> (step counting).</li>
-        <li><strong>Notifications</strong> (reminders).</li>
-        <li><strong>Exact alarms</strong> (more reliable scheduling on some Android versions).</li>
-        <li><strong>Health Connect permissions</strong> (only if you enable Health Connect features).</li>
+        <li>Daily step totals (by date)</li>
+        <li>Optional hourly step snapshots (by date/hour) to enable hourly charts</li>
+        <li>Derived estimates shown in the UI (for example distance and calories estimates)</li>
+      </ul>
+      <p>
+        Derived estimates are approximate and depend on device behavior and optional profile settings.
+      </p>
+
+      <h3>4.2 History and daily summaries</h3>
+      <p>
+        StepFit includes a History view and a day detail screen. These screens may show daily steps and additional daily context
+        such as water intake and sleep sessions if you use those features. These values are stored locally to make history fast and
+        available offline.
+      </p>
+
+      <h3>4.3 Hydration and Water Reminder</h3>
+      <p>
+        StepFit may let you set a daily hydration goal, record how much water you drank, and schedule hydration reminders.
+      </p>
+      <ul>
+        <li>Daily water totals (ml) per date</li>
+        <li>Reminder settings (enabled/disabled, interval, active hours)</li>
+        <li>Local “today” counters stored for convenience</li>
       </ul>
 
-      <h2>8. Clearing data and deletion</h2>
-      <h3>8.1 Clear Local Data</h3>
+      <h3>4.4 Sleep tracking</h3>
       <p>
-        StepFit includes a “Clear Local Data” option in Privacy &amp; Security. This clears locally stored preferences and local databases
-        on your device.
+        StepFit includes sleep tracking. Sleep sessions may be logged manually or imported from Health Connect if you grant permission.
+        StepFit stores sleep sessions locally for your history and insights screens.
+      </p>
+      <ul>
+        <li>Sleep session start/end times, total duration, and a quality score</li>
+        <li>Sleep source label (for example “manual” or “health_connect”)</li>
+        <li>Optional sleep stages (when available from Health Connect)</li>
+      </ul>
+
+      <h3>4.5 Profile data you provide</h3>
+      <p>
+        StepFit can store optional profile fields if you choose to enter them. These fields can improve the UI experience and
+        help estimate distance/calories.
+      </p>
+      <ul>
+        <li>Name/nickname</li>
+        <li>Gender, birth date (used to derive age), height, weight</li>
+        <li>Preferred units (km/mi)</li>
+      </ul>
+
+      <h3>4.6 App preferences and settings</h3>
+      <p>
+        StepFit stores app settings to provide a consistent experience, such as:
+      </p>
+      <ul>
+        <li>Daily step goal</li>
+        <li>Theme mode (dark/light/system)</li>
+        <li>Reminder time</li>
+        <li>Auto-sync/backup toggles</li>
+      </ul>
+
+      <h3>4.7 Widgets</h3>
+      <p>
+        StepFit offers home screen widgets (multiple sizes). Widgets display your step totals and progress.
+        To do this, StepFit stores the latest step totals locally and updates widgets via Android mechanisms.
       </p>
 
-      <h3>8.2 Cloud backups and cloud deletion</h3>
+      <h3>4.8 Notifications and reminders</h3>
       <p>
-        Cloud backups (if you used Sync &amp; Backup) are stored separately from local app storage.
-        Clearing local data does not automatically delete cloud backups.
-      </p>
-      <p>
-        <strong>Planned improvement:</strong> A dedicated option to delete cloud backup data directly from within StepFit may be introduced
-        in a future update to make cleanup more convenient and transparent.
+        StepFit can schedule local notifications to remind you to move, to log water, or to show goal achievements.
+        Notifications are created and delivered on your device. You can disable notifications at any time in Android settings.
       </p>
 
-      <h2>9. Security</h2>
+      <h3>4.9 Health Connect data (optional)</h3>
       <p>
-        StepFit uses Android platform protections and well-known libraries. Network connections to third-party services
-        (such as Firebase) are protected by standard encrypted transport provided by those platforms.
-        You can enable App Lock for an extra in-app layer.
+        If you connect StepFit with <strong>Health Connect</strong>, StepFit may read the data types you explicitly grant, such as:
+      </p>
+      <ul>
+        <li>Steps</li>
+        <li>Distance</li>
+        <li>Total calories burned</li>
+        <li>Weight</li>
+        <li>Sleep sessions</li>
+      </ul>
+      <p>
+        StepFit uses Health Connect data to unify your totals across sources, show consistent history, and reduce double counting
+        when both sensor-based and Health Connect data are present.
       </p>
 
-      <h2>10. Children’s privacy</h2>
+      <h3>4.10 App Lock and security recovery data</h3>
       <p>
-        StepFit is not specifically designed for children under 13. If you want data removed, clear app data or uninstall StepFit.
+        If you enable App Lock, StepFit may store locally:
+      </p>
+      <ul>
+        <li>Whether App Lock is enabled</li>
+        <li>A 4-digit PIN (to unlock StepFit)</li>
+        <li>Whether biometric unlock is allowed (biometric data itself is handled by Android)</li>
+        <li>Lock timeout behavior</li>
+        <li>Security questions/answers if you set them for PIN recovery</li>
+      </ul>
+      <div class="callout">
+        <p>
+          <strong>Note:</strong> StepFit does not receive or store your fingerprint/face data. Biometric authentication is performed
+          by your device’s biometric system.
+        </p>
+      </div>
+
+      <h3>4.11 Cloud backup and restore (optional)</h3>
+      <p>
+        StepFit may offer Sync &amp; Backup features that upload supported data to cloud storage using Firebase services.
+        The goal is to allow restore on reinstall or device change.
+      </p>
+      <p>
+        Backups are designed to include supported categories such as:
+      </p>
+      <ul>
+        <li>Daily step history</li>
+        <li>Selected non-sensitive settings (for example unit, daily goal, theme, reminder time, auto-sync toggle)</li>
+      </ul>
+      <p>
+        Backups are designed to <strong>avoid sensitive fields</strong> (for example personal profile details and App Lock secrets)
+        unless explicitly needed and clearly disclosed.
       </p>
 
-      <h2>11. Changes to this Policy</h2>
+      <h3>4.12 Crash diagnostics and stability reports</h3>
       <p>
-        We may update this Policy to reflect new features or legal requirements. The latest version will be published here.
+        StepFit may use crash reporting (for example Firebase Crashlytics) to understand crashes and improve stability.
+        Crash reports generally include device/app metadata (like OS version, device model) and an error trace.
+        StepFit does not intentionally include your step-by-step history or health records in crash reports.
       </p>
 
-      <h2>12. Contact</h2>
+      <div class="hr"></div>
+
+      <h2 id="purposes">5. How we use data</h2>
+      <p>We process the data described above for purposes such as:</p>
+      <ul>
+        <li><strong>Core tracking:</strong> show daily step totals, progress, and history</li>
+        <li><strong>Personalization:</strong> apply theme, unit, and goal preferences</li>
+        <li><strong>Insights:</strong> provide daily summary screens and optional sleep/hydration context</li>
+        <li><strong>Reminders:</strong> schedule daily reminders, hydration reminders, and activity prompts</li>
+        <li><strong>Security:</strong> enable App Lock and manage unlock sessions</li>
+        <li><strong>Optional integrations:</strong> read Health Connect data when permission is granted</li>
+        <li><strong>Optional cloud features:</strong> backup/restore supported data</li>
+        <li><strong>Reliability:</strong> diagnose crashes and improve performance</li>
+      </ul>
+
+      <h2 id="storage">6. Where data is stored</h2>
+
+      <h3>6.1 On your device (default)</h3>
       <p>
-        <strong>Email:</strong> <a href="mailto:stepfit00@gmail.com">stepfit00@gmail.com</a><br />
+        Most StepFit data is stored on your device in the app’s private storage. This includes Room databases and DataStore preferences.
+        This storage is not accessible by other apps under normal Android security rules.
+      </p>
+
+      <h3>6.2 Health Connect (optional)</h3>
+      <p>
+        If you enable Health Connect, health records may be stored in Health Connect. StepFit can read only what you allow.
+        You can review permissions in Health Connect settings.
+      </p>
+
+      <h3>6.3 Cloud storage for backups (optional)</h3>
+      <p>
+        If you use Sync &amp; Backup, StepFit can upload a backup to cloud infrastructure (Firebase).
+        Backup data is used for restore and continuity, not for advertising.
+      </p>
+
+      <h2 id="sharing">7. Sharing & third parties</h2>
+      <p>
+        StepFit does not sell your personal data. StepFit may share limited data only when necessary to provide features you request.
+        Examples include:
+      </p>
+      <ul>
+        <li><strong>Health Connect (Google)</strong>: to read the health data types you permit.</li>
+        <li><strong>Firebase services (Google)</strong>: for authentication (if used), cloud backup storage, and crash diagnostics.</li>
+        <li><strong>Your email app</strong>: when you choose to send feedback, StepFit opens your email client to send a message.</li>
+      </ul>
+      <p>
+        Third-party services are governed by their own policies. StepFit cannot control third-party service availability.
+      </p>
+
+      <h2 id="permissions">8. Permissions & device controls</h2>
+      <p>
+        StepFit may request Android permissions to enable features. Examples include:
+      </p>
+      <ul>
+        <li><strong>Activity Recognition</strong> (to count steps)</li>
+        <li><strong>Notifications</strong> (to show reminders)</li>
+        <li><strong>Exact alarms</strong> (to schedule reminders reliably on some Android versions)</li>
+        <li><strong>Health Connect permissions</strong> (only for data types you enable)</li>
+      </ul>
+      <p>
+        You can manage permissions in Android Settings and Health Connect Settings at any time.
+      </p>
+
+      <h2 id="retention">9. Retention, deletion, and “Clear Data”</h2>
+
+      <h3>9.1 Local data deletion</h3>
+      <p>
+        StepFit stores most data locally. You can remove local StepFit data by:
+      </p>
+      <ul>
+        <li>Using in-app options such as clearing history (where available), or</li>
+        <li>Using <strong>Privacy &amp; Security → Clear Local Data</strong>, or</li>
+        <li>Uninstalling StepFit (removes StepFit’s app storage from your device).</li>
+      </ul>
+
+      <h3>9.2 Cloud backup deletion</h3>
+      <p>
+        If you used Sync &amp; Backup, a copy of supported data may exist in the cloud as your “latest” backup.
+      </p>
+      <div class="callout">
+        <p>
+          <strong>Planned improvement:</strong> We are preparing an in-app option to delete cloud backup data directly
+          (for example as part of an enhanced “Clear Data” flow). Once available, it will allow you to remove your
+          stored backups from the cloud in addition to clearing local data.
+        </p>
+        <p>
+          <strong>Until that option is available</strong>, you can generally reduce what remains in the cloud by overwriting
+          with a newer backup, disconnecting the linked account, and/or contacting us for assistance.
+        </p>
+      </div>
+
+      <h3>9.3 Health Connect deletion</h3>
+      <p>
+        Health Connect data is managed within Health Connect. If you want to delete health records stored there,
+        use the Health Connect app/system controls. StepFit cannot delete Health Connect data unless you explicitly
+        initiate such an operation through Health Connect-supported actions and permissions.
+      </p>
+
+      <h2 id="security">10. Security</h2>
+      <p>
+        We take reasonable measures to protect StepFit data and reduce the amount of data processed. Security measures include:
+      </p>
+      <ul>
+        <li>Keeping most data on-device by default</li>
+        <li>Using Android app sandboxing and recommended libraries (Room/DataStore)</li>
+        <li>Offering an optional App Lock (PIN + optional biometrics)</li>
+        <li>Using secure transport for cloud features (HTTPS/TLS)</li>
+      </ul>
+      <p>
+        No system can guarantee absolute security. For best protection, keep your Android device updated and use a device screen lock.
+      </p>
+
+      <h2 id="children">11. Children’s privacy</h2>
+      <p>
+        StepFit is not designed specifically for children under 13. If you are a parent or guardian and want data removed,
+        you can clear StepFit’s local data or uninstall the app. If a cloud backup exists and you need assistance,
+        you may contact the Developer.
+      </p>
+
+      <h2 id="changes">12. Changes to this Policy</h2>
+      <p>
+        We may update this Policy to reflect new features, security improvements, or legal requirements.
+        When changes are significant, the updated Policy will be published on this page and may be referenced inside the app.
+      </p>
+
+      <h2 id="contact">13. Contact</h2>
+      <p>
+        If you have questions about this Policy or StepFit’s data handling, contact:
+      </p>
+      <p>
         <strong>Developer:</strong> Iman Mirzazadegan<br />
+        <strong>Email:</strong> <a href="mailto:stepfit00@gmail.com">stepfit00@gmail.com</a><br />
         <strong>App:</strong> StepFit
       </p>
 
