@@ -6,202 +6,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
   <style>
-    :root {
-      --bg: #050608;
-      --card: #0B0B0E;
-      --accentA: #00FFA3;
-      --accentB: #00F5FF;
-      --textMain: #FFFFFF;
-      --textSub: #BFC4D0;
-      --borderSoft: #20232a;
-      --muted: #8e95a5;
+    :root{
+      --bg:#050608;
+      --card:#0B0B0E;
+      --accentA:#00FFA3;
+      --accentB:#00F5FF;
+      --textMain:#FFFFFF;
+      --textSub:#BFC4D0;
+      --muted:#8e95a5;
+      --borderSoft:#20232a;
     }
 
-    * { box-sizing: border-box; }
+    *{box-sizing:border-box}
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        Roboto, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #111318 0, var(--bg) 60%);
-      color: var(--textMain);
-      overflow-x: hidden;
+    html,body{
+      margin:0;padding:0;height:100%;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text",Roboto,"Segoe UI",sans-serif;
+      background:radial-gradient(circle at top,#111318 0,var(--bg) 60%);
+      color:var(--textMain);
+      overflow-x:hidden;
     }
 
-    .bg {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.55;
-      background:
-        radial-gradient(circle at 15% 10%, rgba(0,245,255,0.12), transparent 35%),
-        radial-gradient(circle at 75% 20%, rgba(0,255,163,0.10), transparent 38%),
-        radial-gradient(circle at 50% 85%, rgba(0,245,255,0.06), transparent 45%);
+    /* --- Starfield background (lightweight) --- */
+    .bg-animation{
+      position:fixed; inset:0;
+      pointer-events:none;
+      z-index:0;
+      opacity:1;
+    }
+    .stars, .stars2, .stars3{
+      position:absolute; inset:-2000px 0 0 0;
+      height:4000px;
+      background-repeat:repeat;
+      animation: drift 80s linear infinite;
+      opacity:0.35;
+    }
+    .stars{
+      background-image: radial-gradient(rgba(255,255,255,0.9) 1px, transparent 1px);
+      background-size: 120px 120px;
+      opacity: 0.25;
+      animation-duration: 110s;
+    }
+    .stars2{
+      background-image: radial-gradient(rgba(255,255,255,0.85) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: 0.20;
+      animation-duration: 80s;
+    }
+    .stars3{
+      background-image: radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px);
+      background-size: 55px 55px;
+      opacity: 0.12;
+      animation-duration: 55s;
+    }
+    @keyframes drift{
+      from { background-position: 0 0; }
+      to   { background-position: 0 -2000px; }
     }
 
-    .wrapper {
-      position: relative;
-      z-index: 1;
-      max-width: 980px;
-      margin: 0 auto;
+    .wrapper{
+      position:relative;
+      z-index:1;
+      max-width:980px;
+      margin:0 auto;
       padding: 12px 12px 40px;
     }
 
-    .logo-block {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+    .logo-block{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
       margin: 8px 0 18px;
     }
 
-    .logo-glass {
-      width: 120px;
-      height: 120px;
-      border-radius: 36px;
-      background: #050608;
-      border: 1.5px solid rgba(0,245,255,0.75);
-      box-shadow:
-        0 0 36px rgba(0,245,255,0.35),
-        0 0 70px rgba(0,255,163,0.22);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 14px;
+    .logo-glass{
+      width:120px;height:120px;border-radius:36px;
+      background:#050608;
+      border:1.5px solid rgba(0,245,255,0.75);
+      box-shadow: 0 0 36px rgba(0,245,255,0.35), 0 0 70px rgba(0,255,163,0.22);
+      display:flex;align-items:center;justify-content:center;
+      margin-bottom:14px;
     }
+    .logo-img{width:110px;height:110px;border-radius:20px;object-fit:contain;}
+    .logo-title{font-size:26px;font-weight:800;letter-spacing:.02em;margin:0;}
+    .logo-subtitle{margin:6px 0 0;font-size:13px;color:var(--muted);text-align:center;max-width:60ch;}
 
-    .logo-img {
-      width: 110px;
-      height: 110px;
-      border-radius: 20px;
-      object-fit: contain;
-    }
-
-    .logo-title {
-      font-size: 26px;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      margin: 0;
-    }
-
-    .logo-subtitle {
-      margin: 6px 0 0;
-      font-size: 13px;
-      color: var(--muted);
-      text-align: center;
-      max-width: 56ch;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,0.08);
       background: rgba(255,255,255,0.03);
-      color: var(--textSub);
-      font-size: 12px;
-      line-height: 1;
-      margin: 10px 0 0;
+      color:var(--textSub);
+      font-size:12px;
+      margin-top:10px;
     }
 
-    .card {
-      background: var(--card);
-      border-radius: 24px;
-      border: 1px solid var(--borderSoft);
+    .card{
+      background:var(--card);
+      border-radius:24px;
+      border:1px solid var(--borderSoft);
       padding: 26px 22px 30px;
-      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.65);
+      box-shadow: 0 22px 60px rgba(0,0,0,0.65);
     }
 
-    .accent-bar {
-      width: 92px;
-      height: 4px;
-      border-radius: 999px;
+    .accent-bar{
+      width:92px;height:4px;border-radius:999px;
       margin: 0 auto 18px;
-      background: linear-gradient(90deg, var(--accentA), var(--accentB));
+      background: linear-gradient(90deg,var(--accentA),var(--accentB));
     }
 
-    h1 {
-      font-size: 24px;
-      margin: 0 0 10px;
-      text-align: center;
-      letter-spacing: 0.01em;
+    h1{font-size:24px;margin:0 0 10px;text-align:center;letter-spacing:.01em;}
+    h2{font-size:18px;margin:22px 0 10px;letter-spacing:.01em;}
+    h3{font-size:15px;margin:14px 0 8px;}
+    p{font-size:14px;line-height:1.7;color:var(--textSub);margin:8px 0;}
+    ul{padding-left:20px;color:var(--textSub);font-size:14px;line-height:1.7;margin:6px 0 10px;}
+    li{margin:4px 0;}
+    strong{color:#e8ecf8;}
+    a{color:#8be9ff;text-decoration:none;border-bottom:1px dashed rgba(139,233,255,0.35);}
+    a:hover{border-bottom-color:rgba(139,233,255,0.85);}
+
+    .callout{
+      border:1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      border-radius:18px;
+      padding:14px 14px;
+      margin: 10px 0 6px;
     }
 
-    h2 {
-      font-size: 18px;
-      margin: 22px 0 10px;
-      letter-spacing: 0.01em;
-    }
+    .footer{margin-top:20px;font-size:12px;text-align:center;color:var(--muted);}
 
-    h3 {
-      font-size: 15px;
-      margin: 14px 0 8px;
-    }
-
-    p {
-      font-size: 14px;
-      line-height: 1.7;
-      color: var(--textSub);
-      margin: 8px 0;
-    }
-
-    ul {
-      padding-left: 20px;
-      color: var(--textSub);
-      font-size: 14px;
-      line-height: 1.7;
-      margin: 6px 0 10px;
-    }
-
-    li { margin: 4px 0; }
-
-    strong { color: #e8ecf8; }
-
-    a {
-      color: #8be9ff;
-      text-decoration: none;
-      border-bottom: 1px dashed rgba(139,233,255,0.35);
-    }
-    a:hover { border-bottom-color: rgba(139,233,255,0.8); }
-
-    .footer {
-      margin-top: 20px;
-      font-size: 12px;
-      text-align: center;
-      color: var(--muted);
-    }
-
-    @media (max-width: 720px) {
-      .wrapper { padding: 10px 12px 34px; }
-      .card { padding: 22px 16px 24px; }
+    @media (max-width:720px){
+      .wrapper{padding:10px 12px 34px;}
+      .card{padding:22px 16px 24px;}
     }
   </style>
 </head>
-
 <body>
-  <div class="bg"></div>
+  <!-- Star background -->
+  <div class="bg-animation">
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+  </div>
 
   <div class="wrapper">
     <div class="logo-block">
       <div class="logo-glass">
-        <img
-          src="https://stepfit0.github.io/Privacy-Terms/ic_walk.png"
-          alt="StepFit logo"
-          class="logo-img"
-        />
+        <img src="https://stepfit0.github.io/Privacy-Terms/ic_walk.png" alt="StepFit logo" class="logo-img" />
       </div>
       <h2 class="logo-title">StepFit</h2>
       <p class="logo-subtitle">
-        Clear terms for a simple activity tracker — with optional integrations and backup features.
+        Terms designed to keep your activity tracking clear, predictable, and safe.
       </p>
-      <div class="pill">
-        Terms of Service • Effective date: 2026‑01‑09
-      </div>
+      <div class="pill">Terms of Service • Effective date: 2026‑01‑09</div>
     </div>
 
     <main class="card">
@@ -215,165 +173,145 @@
         If you do not agree, do not use the App.
       </p>
 
-      <h2>1. What StepFit is</h2>
+      <h2>1. What StepFit provides</h2>
       <p>
-        StepFit is a personal fitness companion designed for everyday wellness use. Features may include:
+        StepFit is a wellness-focused tracking app. Depending on your device and the features you enable,
+        StepFit may provide:
       </p>
       <ul>
-        <li>step tracking (device sensors and/or Health Connect if enabled),</li>
-        <li>daily goals and progress visuals,</li>
-        <li>history screens and daily summaries,</li>
-        <li>widgets (home screen step widgets),</li>
-        <li>notifications (daily reminders, goal alerts, water reminders, inactivity prompts),</li>
-        <li>water intake tracking and scheduling,</li>
-        <li>sleep tracking (manual logging and optional Health Connect import),</li>
-        <li>optional App Lock (PIN and optional biometric unlock),</li>
-        <li>optional Sync &amp; Backup (cloud backup / restore).</li>
+        <li>Step tracking (device sensors and optional Health Connect integration)</li>
+        <li>Daily goal configuration and progress visuals</li>
+        <li>History views (daily records and day summaries)</li>
+        <li>Widgets (home screen widgets in multiple sizes)</li>
+        <li>Notifications and reminders (daily reminder, water reminders, inactivity alerts)</li>
+        <li>Hydration tracking (daily water intake and schedule preferences)</li>
+        <li>Sleep tracking (manual logging and optional Health Connect import)</li>
+        <li>App Lock (PIN, optional biometric unlock, and security questions)</li>
+        <li>Optional cloud backup and restore (Sync &amp; Backup)</li>
       </ul>
 
       <h2>2. Not medical advice</h2>
       <p>
         StepFit is <strong>not a medical device</strong> and does not provide medical advice, diagnosis,
-        treatment, or emergency services. Any metrics or insights are for general wellness and motivational
-        purposes only. Always consult a qualified healthcare professional for medical questions.
+        treatment, or emergency services. Metrics shown by StepFit (including steps, distance, calories,
+        or sleep quality scores) are informational estimates for general wellness only.
       </p>
+      <div class="callout">
+        <p>
+          If you have a medical condition, are pregnant, or have concerns about physical activity,
+          consult a qualified healthcare professional before changing your routine.
+        </p>
+      </div>
 
-      <h2>3. Your responsibilities</h2>
+      <h2>3. Accuracy and limitations</h2>
       <p>
-        You are responsible for:
+        Step counting and health metrics depend on your device hardware, Android version, sensor calibration,
+        background restrictions, and (if enabled) Health Connect sources.
+        Some devices may undercount or overcount steps, especially during short movements, cycling, or device inactivity.
       </p>
       <ul>
-        <li>using StepFit in a safe manner appropriate for your health and fitness level,</li>
-        <li>keeping your device secure (screen lock, OS updates),</li>
-        <li>maintaining accurate device settings (date/time) to avoid history inconsistencies,</li>
-        <li>reviewing and managing permissions you grant (including Health Connect permissions).</li>
+        <li>Widgets and notifications show the latest available totals, which may lag briefly depending on OS restrictions.</li>
+        <li>Manual adjustments can be overwritten on the next sync if Health Connect is enabled.</li>
+        <li>Sleep imports depend on permissions and the availability/format of data in Health Connect.</li>
       </ul>
 
-      <h2>4. Accounts, sign-in, and optional cloud backup</h2>
+      <h2>4. Your responsibilities</h2>
+      <p>You are responsible for:</p>
+      <ul>
+        <li>Using StepFit safely and appropriately for your health and fitness level</li>
+        <li>Keeping your device secure (screen lock, OS updates)</li>
+        <li>Maintaining correct device date/time settings to avoid history inconsistencies</li>
+        <li>Managing permissions you grant (including Health Connect and notification permissions)</li>
+        <li>Keeping your App Lock PIN confidential if App Lock is enabled</li>
+      </ul>
+
+      <h2>5. App Lock</h2>
       <p>
-        StepFit does not require a dedicated StepFit account for core tracking features.
-        However, some optional functionality (such as cloud backup / restore) may use third-party sign-in
-        (for example Google Sign-In) and backend services (for example Firebase).
+        StepFit may include an optional App Lock feature (PIN and optional biometric unlock).
+        Biometric authentication is provided by your device’s biometric system. StepFit does not receive or store your biometric data.
       </p>
       <p>
-        Cloud backup availability depends on your internet connection, third-party service availability,
-        and your device settings. Backup/restore is provided as a convenience and is not a guarantee that
-        data will always be recoverable.
+        If you forget your PIN, StepFit may offer a reset flow using security questions (if configured).
+        If no reset method is available, you may need to clear app data or reinstall to regain access.
       </p>
 
-      <h2>5. Health Connect integration</h2>
+      <h2>6. Health Connect integration</h2>
       <p>
-        If you enable Health Connect integration, StepFit will request access only to the data types you
-        choose to grant. Your use of Health Connect is also governed by Google’s Health Connect terms and policies.
-      </p>
-      <p>
-        You can revoke Health Connect permissions at any time through Health Connect settings. Disabling
-        permissions may limit or disable certain StepFit features.
+        StepFit can integrate with <strong>Health Connect</strong> if you choose to enable it.
+        You control what data StepFit can access using Health Connect’s permission system.
+        Health Connect is operated by Google and is subject to Google’s policies.
       </p>
 
-      <h2>6. App Lock</h2>
+      <h2>7. Optional cloud backup &amp; restore</h2>
       <p>
-        StepFit may include an optional in-app lock feature (PIN and optional biometric unlock).
-        If you enable App Lock, you are responsible for:
+        StepFit can offer an optional Sync &amp; Backup feature that uploads supported data to cloud storage.
+        Cloud backup/restore may require internet connectivity and third-party services (for example Google sign-in and Firebase services).
       </p>
       <ul>
-        <li>keeping your PIN confidential,</li>
-        <li>using device-level security protections,</li>
-        <li>understanding that forgetting your PIN may require a reset flow (if available).</li>
+        <li>Backup/restore is provided as a convenience and is not guaranteed to be available at all times.</li>
+        <li>Some data may be excluded from backups for safety and privacy reasons (for example App Lock secrets).</li>
       </ul>
-      <p>
-        Biometric unlock uses your device’s biometric system. StepFit does not receive or store your biometric data.
-      </p>
 
-      <h2>7. Acceptable use</h2>
-      <p>You agree that you will not:</p>
+      <h2>8. Acceptable use</h2>
+      <p>You agree not to:</p>
       <ul>
-        <li>reverse engineer, decompile, or attempt to extract source code, except where permitted by law;</li>
-        <li>tamper with the App’s security features (including App Lock) or attempt to bypass them;</li>
-        <li>abuse the App to generate artificial or misleading activity results for fraud or harm;</li>
-        <li>use StepFit for unlawful, harmful, or abusive activities;</li>
-        <li>distribute modified versions of the App without written permission.</li>
+        <li>Reverse engineer, decompile, or attempt to extract source code except where permitted by law</li>
+        <li>Bypass or tamper with security features (including App Lock)</li>
+        <li>Use StepFit for unlawful, harmful, or abusive activities</li>
+        <li>Distribute modified versions of StepFit without written permission</li>
       </ul>
 
-      <h2>8. Accuracy and limitations</h2>
+      <h2>9. Privacy</h2>
       <p>
-        Step tracking accuracy depends on device hardware, Android version, sensor behavior, background restrictions,
-        Health Connect data sources, and user settings. Results may vary.
-      </p>
-      <p>
-        Derived metrics such as distance, calories, or sleep “quality scores” are estimates. They are not guaranteed
-        to be accurate and should not be relied upon for medical or safety-critical decisions.
+        Your use of StepFit is also governed by the <a href="privacy.html">StepFit Privacy Policy</a>.
+        The Privacy Policy explains what data StepFit processes, where it is stored, and how optional integrations work.
       </p>
 
-      <h2>9. Third-party services and links</h2>
+      <h2>10. Intellectual property</h2>
       <p>
-        StepFit may integrate with or link to third-party products and services (for example Health Connect, Google Sign-In,
-        Firebase, and your email client when sending feedback). Those third parties operate under their own terms and policies.
-        StepFit is not responsible for third-party services or their availability.
+        StepFit and its design, code, icons, and visual assets are protected by intellectual property laws.
+        You receive a limited, non-exclusive, non-transferable, revocable license to use StepFit
+        for personal, non-commercial purposes on devices you own or control.
       </p>
 
-      <h2>10. Privacy</h2>
+      <h2>11. Updates and availability</h2>
       <p>
-        Your use of StepFit is also subject to the <a href="privacy.html">StepFit Privacy Policy</a>,
-        which describes what data StepFit processes and where it is stored.
-        The Privacy Policy forms part of these Terms.
+        StepFit may be updated to fix bugs, improve performance, comply with platform policies, or add/remove features.
+        We do not guarantee any particular feature will remain available forever.
       </p>
 
-      <h2>11. Intellectual property</h2>
-      <p>
-        The App, including its code, design, icons, and visual assets, is protected by intellectual property laws.
-        You are granted a limited, non-exclusive, non-transferable, revocable license to use StepFit for personal,
-        non-commercial purposes on devices you own or control.
-      </p>
-
-      <h2>12. Updates and changes to the App</h2>
-      <p>
-        StepFit may be updated to improve performance, fix bugs, comply with platform requirements, or add/remove features.
-        We do not guarantee that any specific feature, layout, or integration will remain available permanently.
-      </p>
-
-      <h2>13. Disclaimer of warranties</h2>
+      <h2>12. Disclaimer of warranties</h2>
       <p>
         StepFit is provided on an <strong>“as is”</strong> and <strong>“as available”</strong> basis.
-        To the fullest extent permitted by law, we disclaim all warranties, express or implied, including
-        implied warranties of merchantability, fitness for a particular purpose, and non-infringement.
+        To the fullest extent permitted by law, we disclaim all warranties, express or implied.
       </p>
 
-      <h2>14. Limitation of liability</h2>
+      <h2>13. Limitation of liability</h2>
       <p>
         To the fullest extent permitted by law, the developer is not liable for indirect, incidental, special,
-        consequential, or punitive damages, or for loss of data, profits, or reputation arising from your use
-        of (or inability to use) StepFit.
-      </p>
-      <p>
-        Where liability cannot be excluded, it will be limited to the amount you paid for StepFit (if any).
+        consequential, or punitive damages arising from your use of (or inability to use) StepFit.
       </p>
 
-      <h2>15. Termination</h2>
+      <h2>14. Termination</h2>
       <p>
-        You may stop using StepFit at any time by uninstalling it. We may suspend or discontinue StepFit (or any part of it)
-        if required by law, platform policies, security reasons, or technical constraints.
+        You may stop using StepFit at any time by uninstalling it. We may suspend or discontinue StepFit
+        if required for legal, security, platform, or technical reasons.
       </p>
 
-      <h2>16. Changes to these Terms</h2>
+      <h2>15. Changes to these Terms</h2>
       <p>
-        We may update these Terms from time to time. The latest version will be published on this page.
+        These Terms may be updated from time to time. The latest version will be published on this page.
         Continued use of StepFit after changes take effect means you accept the updated Terms.
       </p>
 
-      <h2>17. Contact</h2>
-      <p>
-        Questions about these Terms:
-      </p>
+      <h2>16. Contact</h2>
       <p>
         <strong>Developer:</strong> Iman Mirzazadegan<br />
         <strong>Email:</strong> <a href="mailto:stepfit00@gmail.com">stepfit00@gmail.com</a><br />
         <strong>App:</strong> StepFit
       </p>
 
-      <div class="footer">
-        Last updated: 2026‑01‑09
-      </div>
+      <div class="footer">Last updated: 2026‑01‑09</div>
     </main>
   </div>
 </body>
