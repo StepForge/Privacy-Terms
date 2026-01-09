@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>StepFit – Privacy Policy</title>
+  <title>StepFit – Terms of Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
   <style>
@@ -40,7 +40,6 @@
         radial-gradient(circle at 15% 10%, rgba(0,245,255,0.12), transparent 35%),
         radial-gradient(circle at 75% 20%, rgba(0,255,163,0.10), transparent 38%),
         radial-gradient(circle at 50% 85%, rgba(0,245,255,0.06), transparent 45%);
-      filter: blur(0px);
     }
 
     .wrapper {
@@ -93,7 +92,21 @@
       font-size: 13px;
       color: var(--muted);
       text-align: center;
-      max-width: 52ch;
+      max-width: 56ch;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: var(--textSub);
+      font-size: 12px;
+      line-height: 1;
+      margin: 10px 0 0;
     }
 
     .card {
@@ -149,40 +162,12 @@
 
     strong { color: #e8ecf8; }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-      color: var(--textSub);
-      font-size: 12px;
-      line-height: 1;
-      margin: 8px 0 0;
+    a {
+      color: #8be9ff;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(139,233,255,0.35);
     }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .mini {
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.07);
-      background: rgba(255,255,255,0.02);
-      padding: 14px 14px;
-    }
-
-    .mini b {
-      color: #ffffff;
-      display: block;
-      margin-bottom: 6px;
-      font-size: 13px;
-    }
+    a:hover { border-bottom-color: rgba(139,233,255,0.8); }
 
     .footer {
       margin-top: 20px;
@@ -191,15 +176,7 @@
       color: var(--muted);
     }
 
-    a {
-      color: #8be9ff;
-      text-decoration: none;
-      border-bottom: 1px dashed rgba(139,233,255,0.35);
-    }
-    a:hover { border-bottom-color: rgba(139,233,255,0.8); }
-
     @media (max-width: 720px) {
-      .grid { grid-template-columns: 1fr; }
       .wrapper { padding: 10px 12px 34px; }
       .card { padding: 22px 16px 24px; }
     }
@@ -220,217 +197,173 @@
       </div>
       <h2 class="logo-title">StepFit</h2>
       <p class="logo-subtitle">
-        Built to keep your daily movement visible, measurable, and motivating.
+        Clear terms for a simple activity tracker — with optional integrations and backup features.
       </p>
       <div class="pill">
-        Privacy Policy • Effective date: 2026‑01‑09
+        Terms of Service • Effective date: 2026‑01‑09
       </div>
     </div>
 
     <main class="card">
-      <h1>Privacy Policy</h1>
+      <h1>Terms of Service</h1>
       <div class="accent-bar"></div>
 
       <p>
-        This Privacy Policy explains how <strong>StepFit</strong> (“the App”) processes information.
+        These Terms of Service (“Terms”) govern your use of <strong>StepFit</strong> (“the App”).
         StepFit is developed by <strong>Iman Mirzazadegan</strong>.
-        The App is designed to keep most data on your device, while offering optional integrations
-        such as <strong>Health Connect</strong> and optional <strong>cloud backup</strong>.
+        By installing, accessing, or using StepFit, you agree to these Terms.
+        If you do not agree, do not use the App.
       </p>
 
-      <h2>1. Who we are</h2>
+      <h2>1. What StepFit is</h2>
       <p>
-        <strong>Data controller:</strong> Iman Mirzazadegan (independent developer).<br />
-        <strong>App name:</strong> StepFit
-      </p>
-
-      <h2>2. At a glance</h2>
-      <div class="grid">
-        <div class="mini">
-          <b>Stored on your device</b>
-          <p>
-            Step history, water intake, sleep sessions, app preferences, theme choice, reminders,
-            and (if enabled) App Lock configuration are stored locally using Android app storage.
-          </p>
-        </div>
-        <div class="mini">
-          <b>Optional external services</b>
-          <p>
-            If you enable them, StepFit can interact with Health Connect (to read selected health records)
-            and Firebase services (for cloud backup / restore and crash reporting).
-          </p>
-        </div>
-      </div>
-
-      <h2>3. Data we process</h2>
-
-      <h3>3.1 Activity and step data</h3>
-      <p>
-        StepFit can read your step count from device sensors (such as the Android step counter sensor).
-        The App may also store step history by day, and may store hourly step snapshots to support
-        hourly charts and history screens.
+        StepFit is a personal fitness companion designed for everyday wellness use. Features may include:
       </p>
       <ul>
-        <li>Daily step totals (by date)</li>
-        <li>Optional hourly step snapshots (by date/hour)</li>
-        <li>Derived metrics shown in the UI (for example distance and calories estimates)</li>
+        <li>step tracking (device sensors and/or Health Connect if enabled),</li>
+        <li>daily goals and progress visuals,</li>
+        <li>history screens and daily summaries,</li>
+        <li>widgets (home screen step widgets),</li>
+        <li>notifications (daily reminders, goal alerts, water reminders, inactivity prompts),</li>
+        <li>water intake tracking and scheduling,</li>
+        <li>sleep tracking (manual logging and optional Health Connect import),</li>
+        <li>optional App Lock (PIN and optional biometric unlock),</li>
+        <li>optional Sync &amp; Backup (cloud backup / restore).</li>
       </ul>
 
-      <h3>3.2 Sleep data</h3>
+      <h2>2. Not medical advice</h2>
       <p>
-        StepFit includes a Sleep screen. Sleep sessions may be created manually or imported from Health Connect
-        if you grant the required permission. StepFit stores sleep sessions locally for your history view.
+        StepFit is <strong>not a medical device</strong> and does not provide medical advice, diagnosis,
+        treatment, or emergency services. Any metrics or insights are for general wellness and motivational
+        purposes only. Always consult a qualified healthcare professional for medical questions.
+      </p>
+
+      <h2>3. Your responsibilities</h2>
+      <p>
+        You are responsible for:
       </p>
       <ul>
-        <li>Sleep session times (start/end), total duration, quality score</li>
-        <li>Source label (for example “manual” or “health_connect”)</li>
-        <li>Optional sleep stages (when available from Health Connect)</li>
+        <li>using StepFit in a safe manner appropriate for your health and fitness level,</li>
+        <li>keeping your device secure (screen lock, OS updates),</li>
+        <li>maintaining accurate device settings (date/time) to avoid history inconsistencies,</li>
+        <li>reviewing and managing permissions you grant (including Health Connect permissions).</li>
       </ul>
 
-      <h3>3.3 Hydration (water) data</h3>
+      <h2>4. Accounts, sign-in, and optional cloud backup</h2>
       <p>
-        StepFit includes a Water Reminder feature and daily water intake tracking. The App can store:
+        StepFit does not require a dedicated StepFit account for core tracking features.
+        However, some optional functionality (such as cloud backup / restore) may use third-party sign-in
+        (for example Google Sign-In) and backend services (for example Firebase).
+      </p>
+      <p>
+        Cloud backup availability depends on your internet connection, third-party service availability,
+        and your device settings. Backup/restore is provided as a convenience and is not a guarantee that
+        data will always be recoverable.
+      </p>
+
+      <h2>5. Health Connect integration</h2>
+      <p>
+        If you enable Health Connect integration, StepFit will request access only to the data types you
+        choose to grant. Your use of Health Connect is also governed by Google’s Health Connect terms and policies.
+      </p>
+      <p>
+        You can revoke Health Connect permissions at any time through Health Connect settings. Disabling
+        permissions may limit or disable certain StepFit features.
+      </p>
+
+      <h2>6. App Lock</h2>
+      <p>
+        StepFit may include an optional in-app lock feature (PIN and optional biometric unlock).
+        If you enable App Lock, you are responsible for:
       </p>
       <ul>
-        <li>Daily water totals (ml) per date</li>
-        <li>Reminder schedule preferences (interval and active hours)</li>
+        <li>keeping your PIN confidential,</li>
+        <li>using device-level security protections,</li>
+        <li>understanding that forgetting your PIN may require a reset flow (if available).</li>
       </ul>
-
-      <h3>3.4 Profile data you provide</h3>
       <p>
-        StepFit can store optional profile fields you enter to personalize the experience:
+        Biometric unlock uses your device’s biometric system. StepFit does not receive or store your biometric data.
       </p>
+
+      <h2>7. Acceptable use</h2>
+      <p>You agree that you will not:</p>
       <ul>
-        <li>Name / nickname</li>
-        <li>Gender, birth date (used to derive age), height, weight</li>
-        <li>Preferred distance unit (km/mi)</li>
+        <li>reverse engineer, decompile, or attempt to extract source code, except where permitted by law;</li>
+        <li>tamper with the App’s security features (including App Lock) or attempt to bypass them;</li>
+        <li>abuse the App to generate artificial or misleading activity results for fraud or harm;</li>
+        <li>use StepFit for unlawful, harmful, or abusive activities;</li>
+        <li>distribute modified versions of the App without written permission.</li>
       </ul>
 
-      <h3>3.5 App Lock and security information</h3>
+      <h2>8. Accuracy and limitations</h2>
       <p>
-        If you enable App Lock, StepFit can store locally:
-      </p>
-      <ul>
-        <li>Whether App Lock is enabled</li>
-        <li>A 4‑digit PIN (used to unlock the app)</li>
-        <li>Whether biometric unlock is allowed (biometric data itself is not accessed or stored by StepFit)</li>
-        <li>Optional security questions and answers used for PIN reset</li>
-        <li>Lock timeout preference and session unlock state</li>
-      </ul>
-
-      <h3>3.6 Settings and preferences</h3>
-      <p>
-        StepFit stores preferences such as daily goal, reminder time, and theme selection to operate the App.
-      </p>
-
-      <h3>3.7 Cloud backup and restore (optional)</h3>
-      <p>
-        StepFit offers an optional cloud backup feature. When you use Sync &amp; Backup, StepFit can upload a
-        backup to cloud storage using Firebase services.
+        Step tracking accuracy depends on device hardware, Android version, sensor behavior, background restrictions,
+        Health Connect data sources, and user settings. Results may vary.
       </p>
       <p>
-        Based on the current backup design, the cloud backup is intended to include:
-      </p>
-      <ul>
-        <li>Your step history (daily step totals)</li>
-        <li>Selected non-sensitive settings (for example unit, daily step goal, theme mode, notification time, auto-sync toggle)</li>
-      </ul>
-      <p>
-        The backup is <strong>not intended</strong> to include sensitive profile fields (such as height/weight/birth date),
-        nor App Lock secrets (PIN and related lock settings).
+        Derived metrics such as distance, calories, or sleep “quality scores” are estimates. They are not guaranteed
+        to be accurate and should not be relied upon for medical or safety-critical decisions.
       </p>
 
-      <h3>3.8 Diagnostics and crash reports</h3>
+      <h2>9. Third-party services and links</h2>
       <p>
-        StepFit may use crash reporting tools (such as Firebase Crashlytics) to understand stability issues.
-        Crash reports typically include device/app information and error traces. StepFit does not intentionally
-        include your step history, profile, or health records in crash reports.
+        StepFit may integrate with or link to third-party products and services (for example Health Connect, Google Sign-In,
+        Firebase, and your email client when sending feedback). Those third parties operate under their own terms and policies.
+        StepFit is not responsible for third-party services or their availability.
       </p>
 
-      <h2>4. How we use the data</h2>
-      <ul>
-        <li>To show your progress (steps, goal completion, history, widgets)</li>
-        <li>To run reminders and notifications (daily reminder, hydration reminders, inactivity prompts)</li>
-        <li>To power sleep and water insights</li>
-        <li>To enable App Lock (when turned on)</li>
-        <li>To perform cloud backup and restore (only if you use that feature)</li>
-        <li>To improve stability and fix bugs (crash diagnostics)</li>
-      </ul>
-
-      <h2>5. Where your data is stored</h2>
-
-      <h3>5.1 On-device storage</h3>
+      <h2>10. Privacy</h2>
       <p>
-        Most StepFit data is stored locally in the app’s private storage on your device
-        (for example using Room and DataStore). This data is not shared with other apps
-        unless you explicitly enable a system feature that does so.
+        Your use of StepFit is also subject to the <a href="privacy.html">StepFit Privacy Policy</a>,
+        which describes what data StepFit processes and where it is stored.
+        The Privacy Policy forms part of these Terms.
       </p>
 
-      <h3>5.2 Health Connect</h3>
+      <h2>11. Intellectual property</h2>
       <p>
-        If you enable Health Connect integration, StepFit can read the Health Connect data types you allow.
-        You control access and can revoke it at any time from Health Connect settings.
+        The App, including its code, design, icons, and visual assets, is protected by intellectual property laws.
+        You are granted a limited, non-exclusive, non-transferable, revocable license to use StepFit for personal,
+        non-commercial purposes on devices you own or control.
       </p>
 
-      <h3>5.3 Cloud backup storage</h3>
+      <h2>12. Updates and changes to the App</h2>
       <p>
-        If you use cloud backup, StepFit stores a backup using Firebase services associated with your authentication
-        state (for example a Google sign-in flow). The backup is used solely to let you restore supported data
-        on the same or another device.
+        StepFit may be updated to improve performance, fix bugs, comply with platform requirements, or add/remove features.
+        We do not guarantee that any specific feature, layout, or integration will remain available permanently.
       </p>
 
-      <h2>6. Sharing and third parties</h2>
+      <h2>13. Disclaimer of warranties</h2>
       <p>
-        StepFit does not sell your personal data. StepFit may share limited data with service providers only when
-        you use features that rely on them:
-      </p>
-      <ul>
-        <li><strong>Google Health Connect</strong> (if you connect it) to read permitted health records.</li>
-        <li><strong>Firebase (Google)</strong> for authentication, cloud backup storage, and crash diagnostics.</li>
-        <li><strong>Your email app</strong> (if you choose to send feedback) to draft and send an email message.</li>
-      </ul>
-
-      <h2>7. Permissions</h2>
-      <p>
-        StepFit may request permissions needed for app features, such as:
-      </p>
-      <ul>
-        <li>Activity Recognition (step counting)</li>
-        <li>Notifications (reminders)</li>
-        <li>Health Connect permissions (steps/distance/calories/weight/sleep), only if you enable Health Connect features</li>
-        <li>Exact alarms (to schedule reminders reliably on some Android versions)</li>
-      </ul>
-
-      <h2>8. Data retention and deletion</h2>
-      <ul>
-        <li>You can clear local StepFit data from the in-app Privacy &amp; Security screen (Clear Local Data).</li>
-        <li>Uninstalling the app removes StepFit’s locally stored data from your device.</li>
-        <li>If you enabled Health Connect, Health Connect data retention is controlled via Health Connect settings.</li>
-        <li>If you used cloud backup, backups may remain in cloud storage until overwritten by a newer backup or removed.</li>
-      </ul>
-
-      <h2>9. Security</h2>
-      <p>
-        StepFit uses standard Android platform protections and stores data in the app’s private storage.
-        No mobile system can guarantee absolute security; please use device-level protections (screen lock, OS updates)
-        and enable App Lock if you want an extra layer inside StepFit.
+        StepFit is provided on an <strong>“as is”</strong> and <strong>“as available”</strong> basis.
+        To the fullest extent permitted by law, we disclaim all warranties, express or implied, including
+        implied warranties of merchantability, fitness for a particular purpose, and non-infringement.
       </p>
 
-      <h2>10. Children’s privacy</h2>
+      <h2>14. Limitation of liability</h2>
       <p>
-        StepFit is not designed specifically for children under 13. If you are a parent/guardian and want
-        information removed, you can clear the app’s data or uninstall it.
+        To the fullest extent permitted by law, the developer is not liable for indirect, incidental, special,
+        consequential, or punitive damages, or for loss of data, profits, or reputation arising from your use
+        of (or inability to use) StepFit.
+      </p>
+      <p>
+        Where liability cannot be excluded, it will be limited to the amount you paid for StepFit (if any).
       </p>
 
-      <h2>11. Changes to this Policy</h2>
+      <h2>15. Termination</h2>
       <p>
-        We may update this Policy to reflect new features or legal requirements. The latest version will be
-        published at this page and may be referenced from within the app.
+        You may stop using StepFit at any time by uninstalling it. We may suspend or discontinue StepFit (or any part of it)
+        if required by law, platform policies, security reasons, or technical constraints.
       </p>
 
-      <h2>12. Contact</h2>
+      <h2>16. Changes to these Terms</h2>
       <p>
-        For questions about this Privacy Policy, contact:
+        We may update these Terms from time to time. The latest version will be published on this page.
+        Continued use of StepFit after changes take effect means you accept the updated Terms.
+      </p>
+
+      <h2>17. Contact</h2>
+      <p>
+        Questions about these Terms:
       </p>
       <p>
         <strong>Developer:</strong> Iman Mirzazadegan<br />
