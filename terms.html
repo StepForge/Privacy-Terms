@@ -5,6 +5,7 @@
   <title>StepForge – Terms of Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
+  <meta name="robots" content="index,follow" />
   <style>
     :root{
       --bg:#050608;
@@ -15,303 +16,148 @@
       --textSub:#BFC4D0;
       --muted:#8e95a5;
       --borderSoft:#20232a;
+      --chip:#111318;
+      --softLine: rgba(255,255,255,0.08);
     }
 
     *{box-sizing:border-box}
 
     html,body{
       margin:0;padding:0;height:100%;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text",Roboto,"Segoe UI",sans-serif;
-      background:radial-gradient(circle at top,#111318 0,var(--bg) 60%);
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text",Roboto,"Segoe UI",sans-serif;
+      background: radial-gradient(circle at top,#111318 0,var(--bg) 60%);
       color:var(--textMain);
       overflow-x:hidden;
     }
 
-    /* --- Starfield background (lightweight) --- */
-    .bg-animation{
-      position:fixed; inset:0;
-      pointer-events:none;
-      z-index:0;
-      opacity:1;
-    }
-    .stars, .stars2, .stars3{
-      position:absolute; inset:-2000px 0 0 0;
-      height:4000px;
-      background-repeat:repeat;
-      animation: drift 80s linear infinite;
-      opacity:0.35;
-    }
-    .stars{
-      background-image: radial-gradient(rgba(255,255,255,0.9) 1px, transparent 1px);
-      background-size: 120px 120px;
-      opacity: 0.25;
-      animation-duration: 110s;
-    }
-    .stars2{
-      background-image: radial-gradient(rgba(255,255,255,0.85) 1px, transparent 1px);
-      background-size: 80px 80px;
-      opacity: 0.20;
-      animation-duration: 80s;
-    }
-    .stars3{
-      background-image: radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px);
-      background-size: 55px 55px;
-      opacity: 0.12;
-      animation-duration: 55s;
-    }
-    @keyframes drift{
-      from { background-position: 0 0; }
-      to   { background-position: 0 -2000px; }
-    }
+    .bg-animation{position:fixed; inset:0; pointer-events:none; z-index:0; opacity:1;}
+    .stars, .stars2, .stars3{position:absolute; inset:-2000px 0 0 0; height:4000px; background-repeat:repeat; animation: drift 80s linear infinite; opacity:0.35;}
+    .stars{background-image: radial-gradient(rgba(255,255,255,0.95) 1px, transparent 1px); background-size: 120px 120px; opacity: 0.25; animation-duration: 110s;}
+    .stars2{background-image: radial-gradient(rgba(255,255,255,0.85) 1px, transparent 1px); background-size: 80px 80px; opacity: 0.20; animation-duration: 80s;}
+    .stars3{background-image: radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px); background-size: 55px 55px; opacity: 0.12; animation-duration: 55s;}
+    @keyframes drift{from{background-position:0 0;} to{background-position:0 -2000px;}}
 
-    .wrapper{
-      position:relative;
-      z-index:1;
-      max-width:980px;
-      margin:0 auto;
-      padding: 12px 12px 40px;
-    }
-
-    .logo-block{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-direction:column;
-      margin: 8px 0 18px;
-    }
-
-    .logo-glass{
-      width:120px;height:120px;border-radius:36px;
-      background:#050608;
-      border:1.5px solid rgba(0,245,255,0.75);
-      box-shadow: 0 0 36px rgba(0,245,255,0.35), 0 0 70px rgba(0,255,163,0.22);
-      display:flex;align-items:center;justify-content:center;
-      margin-bottom:14px;
-    }
+    .wrapper{position:relative; z-index:1; max-width:980px; margin:0 auto; padding:12px 12px 44px;}
+    .logo-block{display:flex; align-items:center; justify-content:center; flex-direction:column; margin:8px 0 18px;}
+    .logo-glass{width:120px;height:120px;border-radius:36px;background:#050608;border:1.5px solid rgba(0,245,255,0.75);box-shadow:0 0 36px rgba(0,245,255,0.35),0 0 70px rgba(0,255,163,0.22);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
     .logo-img{width:110px;height:110px;border-radius:20px;object-fit:contain;}
     .logo-title{font-size:26px;font-weight:800;letter-spacing:.02em;margin:0;}
-    .logo-subtitle{margin:6px 0 0;font-size:13px;color:var(--muted);text-align:center;max-width:60ch;}
-
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px; border-radius:999px;
-      border:1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-      color:var(--textSub);
-      font-size:12px;
-      margin-top:10px;
-    }
-
-    .card{
-      background:var(--card);
-      border-radius:24px;
-      border:1px solid var(--borderSoft);
-      padding: 26px 22px 30px;
-      box-shadow: 0 22px 60px rgba(0,0,0,0.65);
-    }
-
-    .accent-bar{
-      width:92px;height:4px;border-radius:999px;
-      margin: 0 auto 18px;
-      background: linear-gradient(90deg,var(--accentA),var(--accentB));
-    }
-
+    .logo-subtitle{margin:6px 0 0;font-size:13px;color:var(--muted);text-align:center;max-width:66ch;}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:var(--textSub);font-size:12px;margin-top:10px;}
+    .card{background:var(--card);border-radius:24px;border:1px solid var(--borderSoft);padding:26px 22px 30px;box-shadow:0 22px 60px rgba(0,0,0,0.65);}
+    .accent-bar{width:92px;height:4px;border-radius:999px;margin:0 auto 18px;background:linear-gradient(90deg,var(--accentA),var(--accentB));}
     h1{font-size:24px;margin:0 0 10px;text-align:center;letter-spacing:.01em;}
     h2{font-size:18px;margin:22px 0 10px;letter-spacing:.01em;}
     h3{font-size:15px;margin:14px 0 8px;}
-    p{font-size:14px;line-height:1.7;color:var(--textSub);margin:8px 0;}
-    ul{padding-left:20px;color:var(--textSub);font-size:14px;line-height:1.7;margin:6px 0 10px;}
+    p{font-size:14px;line-height:1.75;color:var(--textSub);margin:8px 0;}
+    ul{padding-left:20px;color:var(--textSub);font-size:14px;line-height:1.75;margin:6px 0 10px;}
     li{margin:4px 0;}
     strong{color:#e8ecf8;}
     a{color:#8be9ff;text-decoration:none;border-bottom:1px dashed rgba(139,233,255,0.35);}
     a:hover{border-bottom-color:rgba(139,233,255,0.85);}
-
-    .callout{
-      border:1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-      border-radius:18px;
-      padding:14px 14px;
-      margin: 10px 0 6px;
-    }
-
+    .toc{border:1px solid var(--softLine);background:rgba(255,255,255,0.03);border-radius:18px;padding:14px 14px;margin:12px 0 6px;}
+    .toc-title{font-size:13px;font-weight:800;color:#ffffff;margin:0 0 8px;letter-spacing:.01em;}
+    .toc ul{margin:0;padding-left:18px;}
+    .toc a{border-bottom:none;}
+    .toc a:hover{border-bottom:none;text-decoration:underline;}
+    .callout{border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);border-radius:18px;padding:14px 14px;margin:10px 0 6px;}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0 4px;}
+    .mini{border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.02);border-radius:18px;padding:14px 14px;}
+    .mini b{display:block;color:#fff;margin-bottom:6px;font-size:13px;}
+    .mini p{margin:6px 0;}
+    .hr{height:1px;background:rgba(255,255,255,0.08);margin:14px 0;border-radius:999px;}
     .footer{margin-top:20px;font-size:12px;text-align:center;color:var(--muted);}
-
-    @media (max-width:720px){
-      .wrapper{padding:10px 12px 34px;}
-      .card{padding:22px 16px 24px;}
-    }
+    @media (max-width:720px){.wrapper{padding:10px 12px 36px;}.card{padding:22px 16px 24px;}.grid{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
-  <!-- Star background -->
-  <div class="bg-animation">
-    <div class="stars"></div>
-    <div class="stars2"></div>
-    <div class="stars3"></div>
-  </div>
-
+  <div class="bg-animation"><div class="stars"></div><div class="stars2"></div><div class="stars3"></div></div>
   <div class="wrapper">
     <div class="logo-block">
-      <div class="logo-glass">
-        <img src="https://StepForge.github.io/Privacy-Terms/ic_walk.png" alt="StepForge logo" class="logo-img" />
-      </div>
+      <div class="logo-glass"><img src="https://StepForge.github.io/Privacy-Terms/ic_walk.png" alt="StepForge logo" class="logo-img" /></div>
       <h2 class="logo-title">StepForge</h2>
-      <p class="logo-subtitle">
-        Terms designed to keep your activity tracking clear, predictable, and safe.
-      </p>
-      <div class="pill">Terms of Service • Effective date: 2026‑01‑09</div>
+      <p class="logo-subtitle">Terms designed to keep your activity tracking clear, predictable, and safe.</p>
+      <div class="pill">Terms of Service • Effective date: 2026-06-28</div>
     </div>
-
     <main class="card">
       <h1>Terms of Service</h1>
       <div class="accent-bar"></div>
-
-      <p>
-        These Terms of Service (“Terms”) govern your use of <strong>StepForge</strong> (“the App”).
-        StepForge is developed by <strong>Iman Mirzazadegan</strong>.
-        By installing, accessing, or using StepForge, you agree to these Terms.
-        If you do not agree, do not use the App.
-      </p>
-
+      <p>These Terms of Service (“Terms”) govern your use of <strong>StepForge</strong> (“the App”). StepForge is developed by <strong>Iman Mirzazadegan</strong>. By installing, accessing, or using StepForge, you agree to these Terms. If you do not agree, do not use the App.</p>
       <h2>1. What StepForge provides</h2>
-      <p>
-        StepForge is a wellness-focused tracking app. Depending on your device and the features you enable,
-        StepForge may provide:
-      </p>
+      <p>StepForge is a wellness-focused tracking app. Depending on your device, permissions, and enabled features, StepForge may provide:</p>
       <ul>
-        <li>Step tracking (device sensors and optional Health Connect integration)</li>
-        <li>Daily goal configuration and progress visuals</li>
-        <li>History views (daily records and day summaries)</li>
-        <li>Widgets (home screen widgets in multiple sizes)</li>
-        <li>Notifications and reminders (daily reminder, water reminders, inactivity alerts)</li>
-        <li>Hydration tracking (daily water intake and schedule preferences)</li>
-        <li>Sleep tracking (manual logging and optional Health Connect import)</li>
-        <li>App Lock (PIN, optional biometric unlock, and security questions)</li>
-        <li>Optional cloud backup and restore (Sync &amp; Backup)</li>
+        <li>Step tracking through device sensors and optional Health Connect integration</li>
+        <li>Progress dashboards, trends, heatmaps, daily snapshots, history, day detail, and widgets</li>
+        <li>Goals for steps, calories, active minutes, distance, hydration, and sleep</li>
+        <li>Achievements, streaks, points, level/XP-style progress, and share screenshots</li>
+        <li>Profile personalization, including optional Google account profile import after confirmation</li>
+        <li>Hydration tracking, water reminders, sleep tracking, nap tracking, and sleep goals</li>
+        <li>Workout summaries and activity insights</li>
+        <li>App Lock with PIN and optional biometric unlock</li>
+        <li>Optional cloud backup/restore and optional Health Connect sync</li>
+        <li>Feedback, help, debug export, and support flows</li>
       </ul>
-
       <h2>2. Not medical advice</h2>
-      <p>
-        StepForge is <strong>not a medical device</strong> and does not provide medical advice, diagnosis,
-        treatment, or emergency services. Metrics shown by StepForge (including steps, distance, calories,
-        or sleep quality scores) are informational estimates for general wellness only.
-      </p>
-      <div class="callout">
-        <p>
-          If you have a medical condition, are pregnant, or have concerns about physical activity,
-          consult a qualified healthcare professional before changing your routine.
-        </p>
-      </div>
-
+      <p>StepForge is <strong>not a medical device</strong> and does not provide medical advice, diagnosis, treatment, emergency services, or professional health recommendations. Metrics such as steps, distance, calories, active minutes, sleep duration, sleep quality, progress scores, achievements, and insights are informational estimates for general wellness only.</p>
+      <div class="callout"><p>If you have a medical condition, are pregnant, are injured, or have concerns about physical activity, consult a qualified healthcare professional before changing your routine.</p></div>
       <h2>3. Accuracy and limitations</h2>
-      <p>
-        Step counting and health metrics depend on your device hardware, Android version, sensor calibration,
-        background restrictions, and (if enabled) Health Connect sources.
-        Some devices may undercount or overcount steps, especially during short movements, cycling, or device inactivity.
-      </p>
+      <p>Step counting and wellness metrics depend on device hardware, Android version, sensor behavior, Health Connect sources, permissions, background restrictions, and user settings. Values may be delayed, duplicated, missing, overcounted, or undercounted.</p>
       <ul>
-        <li>Widgets and notifications show the latest available totals, which may lag briefly depending on OS restrictions.</li>
-        <li>Manual adjustments can be overwritten on the next sync if Health Connect is enabled.</li>
-        <li>Sleep imports depend on permissions and the availability/format of data in Health Connect.</li>
+        <li>Transport movement, device vibration, cycling, or unusual phone placement may affect step accuracy.</li>
+        <li>Distance, calories, active minutes, sleep quality, and progress scores are estimates.</li>
+        <li>Health Connect sync depends on permissions, external data sources, and available record formats.</li>
+        <li>Manual adjustments and imported records may be reconciled to reduce duplicate data, but perfect accuracy is not guaranteed.</li>
+        <li>Widgets and notifications may lag because of Android background restrictions.</li>
       </ul>
-
       <h2>4. Your responsibilities</h2>
-      <p>You are responsible for:</p>
       <ul>
-        <li>Using StepForge safely and appropriately for your health and fitness level</li>
-        <li>Keeping your device secure (screen lock, OS updates)</li>
-        <li>Maintaining correct device date/time settings to avoid history inconsistencies</li>
-        <li>Managing permissions you grant (including Health Connect and notification permissions)</li>
-        <li>Keeping your App Lock PIN confidential if App Lock is enabled</li>
+        <li>Use StepForge safely and appropriately for your health and fitness level.</li>
+        <li>Keep your device secure and maintain correct date/time settings.</li>
+        <li>Manage Android, notification, Google account, Health Connect, and backup permissions.</li>
+        <li>Review imported data and manual entries for accuracy.</li>
+        <li>Keep your App Lock PIN confidential if App Lock is enabled.</li>
       </ul>
-
-      <h2>5. App Lock</h2>
-      <p>
-        StepForge may include an optional App Lock feature (PIN and optional biometric unlock).
-        Biometric authentication is provided by your device’s biometric system. StepForge does not receive or store your biometric data.
-      </p>
-      <p>
-        If you forget your PIN, StepForge may offer a reset flow using security questions (if configured).
-        If no reset method is available, you may need to clear app data or reinstall to regain access.
-      </p>
-
-      <h2>6. Health Connect integration</h2>
-      <p>
-        StepForge can integrate with <strong>Health Connect</strong> if you choose to enable it.
-        You control what data StepForge can access using Health Connect’s permission system.
-        Health Connect is operated by Google and is subject to Google’s policies.
-      </p>
-
-      <h2>7. Optional cloud backup &amp; restore</h2>
-      <p>
-        StepForge can offer an optional Sync &amp; Backup feature that uploads supported data to cloud storage.
-        Cloud backup/restore may require internet connectivity and third-party services (for example Google sign-in and Firebase services).
-      </p>
+      <h2>5. Account, profile, and Google sign-in</h2>
+      <p>Some features may allow you to connect a Google account. If you do, StepForge may show available account profile information, such as display name and profile photo, for your confirmation. You are responsible for reviewing and saving correct profile information.</p>
+      <h2>6. Achievements, sharing, and profile display</h2>
+      <p>Achievements, streaks, points, levels, premium indicators, and profile summaries are motivational features. They do not represent medical or professional performance evaluations. If you choose to share an achievement screenshot or other content, you are responsible for where and with whom you share it.</p>
+      <h2>7. Health Connect integration</h2>
+      <p>StepForge can integrate with Health Connect if enabled. You control which data types StepForge can access using Health Connect’s permission system. StepForge may read or write permitted records only for enabled sync features, such as steps, distance, calories, weight, sleep sessions, and sleep stages.</p>
+      <h2>8. Optional cloud backup and restore</h2>
+      <p>Sync &amp; Backup may upload supported StepForge data to cloud storage. Backup/restore is provided for convenience and may require internet connectivity, Google sign-in, Firebase services, and compatible app versions.</p>
       <ul>
-        <li>Backup/restore is provided as a convenience and is not guaranteed to be available at all times.</li>
-        <li>Some data may be excluded from backups for safety and privacy reasons (for example App Lock secrets).</li>
+        <li>Backup availability and restore completeness are not guaranteed.</li>
+        <li>Some data may be excluded for safety or privacy reasons, such as App Lock secrets.</li>
+        <li>You should not rely on StepForge as your only record for important health or activity information.</li>
       </ul>
-
-      <h2>8. Acceptable use</h2>
+      <h2>9. Premium and advanced features</h2>
+      <p>StepForge may show or offer premium/advanced tools, such as advanced analytics, recovery insights, custom workouts, nutrition coaching, or premium badges. Availability, names, and behavior may change over time. Premium features, if offered, are subject to app store rules and any purchase terms shown at the time of purchase.</p>
+      <h2>10. Privacy</h2>
+      <p>Your use of StepForge is also governed by the <a href="privacy.html">StepForge Privacy Policy</a>, which explains what data StepForge processes, where it is stored, and how optional integrations work.</p>
+      <h2>11. Acceptable use</h2>
       <p>You agree not to:</p>
       <ul>
         <li>Reverse engineer, decompile, or attempt to extract source code except where permitted by law</li>
-        <li>Bypass or tamper with security features (including App Lock)</li>
-        <li>Use StepForge for unlawful, harmful, or abusive activities</li>
+        <li>Bypass, tamper with, or misuse security features, App Lock, sync, or backup systems</li>
+        <li>Use StepForge for unlawful, harmful, abusive, or deceptive activities</li>
+        <li>Upload, share, or submit harmful or misleading support/debug content</li>
         <li>Distribute modified versions of StepForge without written permission</li>
       </ul>
-
-      <h2>9. Privacy</h2>
-      <p>
-        Your use of StepForge is also governed by the <a href="privacy.html">StepForge Privacy Policy</a>.
-        The Privacy Policy explains what data StepForge processes, where it is stored, and how optional integrations work.
-      </p>
-
-      <h2>10. Intellectual property</h2>
-      <p>
-        StepForge and its design, code, icons, and visual assets are protected by intellectual property laws.
-        You receive a limited, non-exclusive, non-transferable, revocable license to use StepForge
-        for personal, non-commercial purposes on devices you own or control.
-      </p>
-
-      <h2>11. Updates and availability</h2>
-      <p>
-        StepForge may be updated to fix bugs, improve performance, comply with platform policies, or add/remove features.
-        We do not guarantee any particular feature will remain available forever.
-      </p>
-
-      <h2>12. Disclaimer of warranties</h2>
-      <p>
-        StepForge is provided on an <strong>“as is”</strong> and <strong>“as available”</strong> basis.
-        To the fullest extent permitted by law, we disclaim all warranties, express or implied.
-      </p>
-
-      <h2>13. Limitation of liability</h2>
-      <p>
-        To the fullest extent permitted by law, the developer is not liable for indirect, incidental, special,
-        consequential, or punitive damages arising from your use of (or inability to use) StepForge.
-      </p>
-
-      <h2>14. Termination</h2>
-      <p>
-        You may stop using StepForge at any time by uninstalling it. We may suspend or discontinue StepForge
-        if required for legal, security, platform, or technical reasons.
-      </p>
-
-      <h2>15. Changes to these Terms</h2>
-      <p>
-        These Terms may be updated from time to time. The latest version will be published on this page.
-        Continued use of StepForge after changes take effect means you accept the updated Terms.
-      </p>
-
-      <h2>16. Contact</h2>
-      <p>
-        <strong>Developer:</strong> Iman Mirzazadegan<br />
-        <strong>Email:</strong> <a href="mailto:stepforge0@gmail.com">stepforge0@gmail.com</a><br />
-        <strong>App:</strong> StepForge
-      </p>
-
-      <div class="footer">Last updated: 2026‑01‑09</div>
+      <h2>12. Intellectual property</h2>
+      <p>StepForge and its design, code, icons, text, brand elements, and visual assets are protected by intellectual property laws. You receive a limited, non-exclusive, non-transferable, revocable license to use StepForge for personal, non-commercial purposes on devices you own or control.</p>
+      <h2>13. Updates and availability</h2>
+      <p>StepForge may be updated to fix bugs, improve performance, add/remove features, improve safety, or comply with platform requirements. We do not guarantee that any feature will remain available forever.</p>
+      <h2>14. Disclaimer of warranties</h2>
+      <p>StepForge is provided on an <strong>“as is”</strong> and <strong>“as available”</strong> basis. To the fullest extent permitted by law, we disclaim all warranties, express or implied, including accuracy, reliability, availability, and fitness for a particular purpose.</p>
+      <h2>15. Limitation of liability</h2>
+      <p>To the fullest extent permitted by law, the Developer is not liable for indirect, incidental, special, consequential, punitive, or data-loss damages arising from your use of, reliance on, or inability to use StepForge.</p>
+      <h2>16. Termination</h2>
+      <p>You may stop using StepForge at any time by uninstalling it. We may suspend, discontinue, or restrict StepForge features if required for legal, security, platform, or technical reasons.</p>
+      <h2>17. Changes to these Terms</h2>
+      <p>These Terms may be updated from time to time. The latest version will be published on this page. Continued use of StepForge after changes take effect means you accept the updated Terms.</p>
+      <h2>18. Contact</h2>
+      <p><strong>Developer:</strong> Iman Mirzazadegan<br /><strong>Email:</strong> <a href="mailto:stepforge0@gmail.com">stepforge0@gmail.com</a><br /><strong>App:</strong> StepForge</p>
+      <div class="footer">Last updated: 2026-06-28</div>
     </main>
   </div>
 </body>
