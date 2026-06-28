@@ -7,67 +7,7 @@
   <meta name="color-scheme" content="dark light" />
   <meta name="robots" content="index,follow" />
   <style>
-    :root{
-      --bg:#050608;
-      --card:#0B0B0E;
-      --accentA:#00FFA3;
-      --accentB:#00F5FF;
-      --textMain:#FFFFFF;
-      --textSub:#BFC4D0;
-      --muted:#8e95a5;
-      --borderSoft:#20232a;
-      --chip:#111318;
-      --softLine: rgba(255,255,255,0.08);
-    }
-
-    *{box-sizing:border-box}
-
-    html,body{
-      margin:0;padding:0;height:100%;
-      font-family: system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text",Roboto,"Segoe UI",sans-serif;
-      background: radial-gradient(circle at top,#111318 0,var(--bg) 60%);
-      color:var(--textMain);
-      overflow-x:hidden;
-    }
-
-    .bg-animation{position:fixed; inset:0; pointer-events:none; z-index:0; opacity:1;}
-    .stars, .stars2, .stars3{position:absolute; inset:-2000px 0 0 0; height:4000px; background-repeat:repeat; animation: drift 80s linear infinite; opacity:0.35;}
-    .stars{background-image: radial-gradient(rgba(255,255,255,0.95) 1px, transparent 1px); background-size: 120px 120px; opacity: 0.25; animation-duration: 110s;}
-    .stars2{background-image: radial-gradient(rgba(255,255,255,0.85) 1px, transparent 1px); background-size: 80px 80px; opacity: 0.20; animation-duration: 80s;}
-    .stars3{background-image: radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px); background-size: 55px 55px; opacity: 0.12; animation-duration: 55s;}
-    @keyframes drift{from{background-position:0 0;} to{background-position:0 -2000px;}}
-
-    .wrapper{position:relative; z-index:1; max-width:980px; margin:0 auto; padding:12px 12px 44px;}
-    .logo-block{display:flex; align-items:center; justify-content:center; flex-direction:column; margin:8px 0 18px;}
-    .logo-glass{width:120px;height:120px;border-radius:36px;background:#050608;border:1.5px solid rgba(0,245,255,0.75);box-shadow:0 0 36px rgba(0,245,255,0.35),0 0 70px rgba(0,255,163,0.22);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
-    .logo-img{width:110px;height:110px;border-radius:20px;object-fit:contain;}
-    .logo-title{font-size:26px;font-weight:800;letter-spacing:.02em;margin:0;}
-    .logo-subtitle{margin:6px 0 0;font-size:13px;color:var(--muted);text-align:center;max-width:66ch;}
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:var(--textSub);font-size:12px;margin-top:10px;}
-    .card{background:var(--card);border-radius:24px;border:1px solid var(--borderSoft);padding:26px 22px 30px;box-shadow:0 22px 60px rgba(0,0,0,0.65);}
-    .accent-bar{width:92px;height:4px;border-radius:999px;margin:0 auto 18px;background:linear-gradient(90deg,var(--accentA),var(--accentB));}
-    h1{font-size:24px;margin:0 0 10px;text-align:center;letter-spacing:.01em;}
-    h2{font-size:18px;margin:22px 0 10px;letter-spacing:.01em;}
-    h3{font-size:15px;margin:14px 0 8px;}
-    p{font-size:14px;line-height:1.75;color:var(--textSub);margin:8px 0;}
-    ul{padding-left:20px;color:var(--textSub);font-size:14px;line-height:1.75;margin:6px 0 10px;}
-    li{margin:4px 0;}
-    strong{color:#e8ecf8;}
-    a{color:#8be9ff;text-decoration:none;border-bottom:1px dashed rgba(139,233,255,0.35);}
-    a:hover{border-bottom-color:rgba(139,233,255,0.85);}
-    .toc{border:1px solid var(--softLine);background:rgba(255,255,255,0.03);border-radius:18px;padding:14px 14px;margin:12px 0 6px;}
-    .toc-title{font-size:13px;font-weight:800;color:#ffffff;margin:0 0 8px;letter-spacing:.01em;}
-    .toc ul{margin:0;padding-left:18px;}
-    .toc a{border-bottom:none;}
-    .toc a:hover{border-bottom:none;text-decoration:underline;}
-    .callout{border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);border-radius:18px;padding:14px 14px;margin:10px 0 6px;}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0 4px;}
-    .mini{border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.02);border-radius:18px;padding:14px 14px;}
-    .mini b{display:block;color:#fff;margin-bottom:6px;font-size:13px;}
-    .mini p{margin:6px 0;}
-    .hr{height:1px;background:rgba(255,255,255,0.08);margin:14px 0;border-radius:999px;}
-    .footer{margin-top:20px;font-size:12px;text-align:center;color:var(--muted);}
-    @media (max-width:720px){.wrapper{padding:10px 12px 36px;}.card{padding:22px 16px 24px;}.grid{grid-template-columns:1fr;}}
+    :root{--bg:#050608;--card:#0B0B0E;--card2:#10131A;--accentA:#00FFA3;--accentB:#00F5FF;--textMain:#FFFFFF;--textSub:#BFC4D0;--muted:#8e95a5;--borderSoft:#20232a;--softLine:rgba(255,255,255,0.08);--warning:#FFB86B}*{box-sizing:border-box}html,body{margin:0;padding:0;min-height:100%;font-family:system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text",Roboto,"Segoe UI",sans-serif;background:radial-gradient(circle at top,#111318 0,var(--bg) 62%);color:var(--textMain);overflow-x:hidden}.bg-animation{position:fixed;inset:0;pointer-events:none;z-index:0}.stars,.stars2,.stars3{position:absolute;inset:-2000px 0 0 0;height:4000px;background-repeat:repeat;animation:drift 90s linear infinite}.stars{background-image:radial-gradient(rgba(255,255,255,.95) 1px,transparent 1px);background-size:120px 120px;opacity:.22;animation-duration:110s}.stars2{background-image:radial-gradient(rgba(255,255,255,.85) 1px,transparent 1px);background-size:80px 80px;opacity:.16;animation-duration:80s}.stars3{background-image:radial-gradient(rgba(255,255,255,.8) 1px,transparent 1px);background-size:55px 55px;opacity:.1;animation-duration:55s}@keyframes drift{from{background-position:0 0}to{background-position:0 -2000px}}.wrapper{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:18px 14px 54px}.logo-block{display:flex;align-items:center;justify-content:center;flex-direction:column;margin:6px 0 18px;text-align:center}.logo-glass{width:118px;height:118px;border-radius:34px;background:#050608;border:1.5px solid rgba(0,245,255,.76);box-shadow:0 0 36px rgba(0,245,255,.34),0 0 70px rgba(0,255,163,.2);display:flex;align-items:center;justify-content:center;margin-bottom:14px}.logo-img{width:108px;height:108px;border-radius:20px;object-fit:contain}.logo-title{font-size:27px;font-weight:850;letter-spacing:.015em;margin:0}.logo-subtitle{margin:7px 0 0;font-size:13px;color:var(--muted);max-width:72ch}.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);color:var(--textSub);font-size:12px;margin-top:12px}.card{background:linear-gradient(180deg,rgba(16,19,26,.94),rgba(7,8,12,.98));border-radius:26px;border:1px solid var(--borderSoft);padding:30px 24px 34px;box-shadow:0 24px 70px rgba(0,0,0,.68)}.accent-bar{width:96px;height:4px;border-radius:999px;margin:0 auto 18px;background:linear-gradient(90deg,var(--accentA),var(--accentB))}h1{font-size:26px;margin:0 0 10px;text-align:center;letter-spacing:.01em}h2{font-size:19px;margin:28px 0 12px;letter-spacing:.01em}h3{font-size:15px;margin:18px 0 9px}p{font-size:14px;line-height:1.76;color:var(--textSub);margin:8px 0}ul{padding-left:20px;color:var(--textSub);font-size:14px;line-height:1.74;margin:8px 0 12px}li{margin:5px 0}strong{color:#f0f4ff}a{color:#8be9ff;text-decoration:none;border-bottom:1px dashed rgba(139,233,255,.34)}a:hover{border-bottom-color:rgba(139,233,255,.86)}.toc{border:1px solid var(--softLine);background:rgba(255,255,255,.035);border-radius:20px;padding:16px;margin:14px 0 8px}.toc-title{font-size:13px;font-weight:850;color:#fff;margin:0 0 8px;letter-spacing:.02em;text-transform:uppercase}.toc ul{margin:0;padding-left:18px;columns:2}.toc a{border-bottom:none}.toc a:hover{text-decoration:underline}.callout{border:1px solid rgba(0,245,255,.24);background:linear-gradient(135deg,rgba(0,245,255,.07),rgba(0,255,163,.035));border-radius:19px;padding:15px 16px;margin:12px 0}.warning{border-color:rgba(255,184,107,.28);background:linear-gradient(135deg,rgba(255,184,107,.08),rgba(255,255,255,.025))}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0 6px}.mini{border:1px solid rgba(255,255,255,.075);background:rgba(255,255,255,.025);border-radius:18px;padding:14px}.mini b{display:block;color:#fff;margin-bottom:7px;font-size:13px}.mini p{margin:6px 0}.table-wrap{overflow:auto;border:1px solid rgba(255,255,255,.08);border-radius:18px;margin:12px 0;background:rgba(255,255,255,.02)}table{width:100%;border-collapse:collapse;min-width:680px}th,td{padding:12px;border-bottom:1px solid rgba(255,255,255,.07);vertical-align:top;text-align:left;font-size:13px;line-height:1.55}th{color:#fff;background:rgba(255,255,255,.035);font-size:12px;text-transform:uppercase;letter-spacing:.04em}td{color:var(--textSub)}tr:last-child td{border-bottom:none}.section-note{font-size:12px;color:var(--muted);margin-top:8px}.footer{margin-top:24px;font-size:12px;text-align:center;color:var(--muted)}@media(max-width:720px){.wrapper{padding:10px 12px 40px}.card{padding:22px 16px 26px;border-radius:23px}.grid{grid-template-columns:1fr}.toc ul{columns:1}h1{font-size:24px}h2{font-size:18px}.logo-glass{width:104px;height:104px;border-radius:30px}.logo-img{width:96px;height:96px}}
   </style>
 </head>
 <body>
@@ -82,107 +22,34 @@
     <main class="card">
       <h1>Privacy Policy</h1>
       <div class="accent-bar"></div>
-      <p>This Privacy Policy (“Policy”) explains how <strong>StepForge</strong> (“StepForge”, “we”, “us”, or “the App”) processes information when you install or use the App. StepForge is developed and maintained by <strong>Iman Mirzazadegan</strong> (“Developer”).</p>
-      <p>StepForge is designed to be practical and privacy-respecting. Most activity and wellness data is stored locally on your device. Optional features such as <strong>Health Connect</strong>, <strong>Google account profile import</strong>, <strong>Firebase cloud backup/restore</strong>, and <strong>crash diagnostics</strong> may involve third-party services only when the related feature is enabled or used.</p>
-      <div class="toc">
-        <div class="toc-title">Contents</div>
-        <ul>
-          <li><a href="#scope">1. Scope</a></li>
-          <li><a href="#summary">2. Summary</a></li>
-          <li><a href="#data">3. Data we process</a></li>
-          <li><a href="#purposes">4. How we use data</a></li>
-          <li><a href="#storage">5. Where data is stored</a></li>
-          <li><a href="#sharing">6. Sharing and third parties</a></li>
-          <li><a href="#permissions">7. Permissions and controls</a></li>
-          <li><a href="#retention">8. Retention and deletion</a></li>
-          <li><a href="#security">9. Security</a></li>
-          <li><a href="#children">10. Children</a></li>
-          <li><a href="#changes">11. Changes</a></li>
-          <li><a href="#contact">12. Contact</a></li>
-        </ul>
-      </div>
-      <h2 id="scope">1. Scope</h2>
-      <p>This Policy applies to StepForge distributed through official channels and covers features available in the App, including step tracking, progress dashboards, history/day detail, achievements, streaks, level/XP-style progress, profile personalization, goals, widgets, notifications, hydration, sleep, workouts, App Lock, Health Connect, feedback/support, debug exports, and Sync &amp; Backup.</p>
-      <h2 id="summary">2. Summary</h2>
-      <div class="grid">
-        <div class="mini"><b>Local-first</b><p>Daily steps, progress, achievements, goals, water logs, sleep logs, workout summaries, profile preferences, and most settings are stored on your device by default.</p></div>
-        <div class="mini"><b>Optional integrations</b><p>Health Connect, Google account profile import, Firebase cloud backup, and crash reporting are optional or feature-dependent. You can use StepForge without enabling Health Connect or cloud backup.</p></div>
-      </div>
-      <div class="callout"><p><strong>Important:</strong> StepForge does not sell your personal data and does not use advertising SDKs designed to track you across apps.</p></div>
-      <h2 id="data">3. Data we process</h2>
-      <h3>3.1 Steps, progress, and activity data</h3>
-      <p>StepForge can read step counts from device motion sensors and may store step totals to power Home, Progress, History, widgets, achievements, streaks, and goal visuals.</p>
-      <ul>
-        <li>Daily step totals by date</li>
-        <li>Optional hourly step snapshots for charts and day detail</li>
-        <li>Derived estimates such as distance, calories, active minutes, progress score, averages, trends, heatmaps, and goal completion</li>
-        <li>Manual adjustments you make to steps or water values</li>
-      </ul>
-      <p>Derived estimates are approximate and can vary based on device behavior, sensor accuracy, Health Connect data, and profile settings.</p>
-      <h3>3.2 Profile and personalization data</h3>
-      <p>StepForge can store optional profile and personalization fields you enter or approve, including:</p>
-      <ul>
-        <li>Name or nickname</li>
-        <li>Optional profile picture or image URI</li>
-        <li>Gender, birth date/age, height, weight, and preferred units when provided</li>
-        <li>Level/XP-style progress, total points, streak summaries, premium status display, and achievement progress</li>
-        <li>Goal settings for steps, calories, active minutes, distance, water, and sleep</li>
-      </ul>
-      <h3>3.3 Google account profile import</h3>
-      <p>If you connect a Google account, StepForge may receive basic account profile information such as your display name, email address, and profile photo URL from Google sign-in. StepForge shows a confirmation screen before using this information in your profile. You can save it, edit it, or decline it.</p>
-      <h3>3.4 Achievements and sharing</h3>
-      <p>StepForge tracks achievement unlock status, progress toward milestones, earned dates, share screenshots generated in the app, and related display data. Sharing is user-initiated: StepForge prepares the share image/content, and you choose whether and where to share it.</p>
-      <h3>3.5 Hydration and sleep</h3>
-      <p>StepForge can store hydration goals, water intake logs, reminder settings, sleep goals, manual sleep sessions, nap records, imported Health Connect sleep sessions, optional sleep stages, sleep quality scores, and sleep source labels such as manual or Health Connect.</p>
-      <h3>3.6 Workouts and daily summaries</h3>
-      <p>StepForge may store workout sessions or workout-derived summaries such as workout duration, distance, calories, steps, session type, timestamps, and daily snapshot totals.</p>
-      <h3>3.7 App settings and security data</h3>
-      <p>StepForge stores preferences such as theme, language, units, reminder schedules, widget settings, sync preferences, and App Lock settings. If App Lock is enabled, StepForge may store whether App Lock is enabled, a PIN or PIN-related configuration, timeout settings, biometric unlock preference, and recovery questions/answers if configured. Biometric data itself is handled by Android and is not received or stored by StepForge.</p>
-      <h3>3.8 Health Connect data</h3>
-      <p>If you enable Health Connect, StepForge may read or write only the health data types you grant, such as steps, distance, calories, weight, sleep sessions, and sleep stages. StepForge uses Health Connect to sync permitted data, show consistent history, and reduce duplicate records.</p>
-      <h3>3.9 Cloud backup and restore</h3>
-      <p>If you enable Sync &amp; Backup, StepForge may upload supported categories to Firebase-based cloud storage so you can restore them later. Backups can include supported activity/history, goals, settings, achievements/progress metadata, hydration/sleep/workout summaries, and other supported StepForge state. Sensitive fields such as App Lock secrets are designed to be excluded unless clearly disclosed and required.</p>
-      <h3>3.10 Feedback, support, debug logs, and crash diagnostics</h3>
-      <p>If you send feedback or debug logs, the information you choose to send may include your message, email app metadata, app version, device/app diagnostics, timestamps, error traces, and selected StepForge state useful for troubleshooting. StepForge may also use Firebase Crashlytics to understand crashes and improve stability. Crash reports are not intended to include your full health history.</p>
-      <h2 id="purposes">4. How we use data</h2>
-      <ul>
-        <li><strong>Core tracking:</strong> show steps, distance, calories, active minutes, progress, and history.</li>
-        <li><strong>Personalization:</strong> apply profile, units, theme, language, goals, water, and sleep preferences.</li>
-        <li><strong>Insights:</strong> calculate trends, heatmaps, streaks, achievements, level/XP-style progress, daily snapshots, and summaries.</li>
-        <li><strong>Reminders:</strong> schedule movement, hydration, sleep, and activity notifications.</li>
-        <li><strong>Security:</strong> provide App Lock and related recovery options.</li>
-        <li><strong>Integrations:</strong> sync permitted data with Health Connect or cloud backup when enabled.</li>
-        <li><strong>Reliability:</strong> diagnose crashes, bugs, sync issues, and performance problems.</li>
-      </ul>
-      <h2 id="storage">5. Where data is stored</h2>
-      <h3>5.1 On your device</h3>
-      <p>Most StepForge data is stored locally in the app’s private storage, including Room databases, DataStore preferences, app files, and generated UI/cache data.</p>
-      <h3>5.2 Health Connect</h3>
-      <p>Health Connect records are managed by Health Connect and Android. StepForge can access only the data types you permit and only while permission remains granted.</p>
-      <h3>5.3 Cloud storage</h3>
-      <p>If Sync &amp; Backup is enabled, supported backup data may be stored in Firebase services to provide restore and continuity. Backup data is not used for advertising.</p>
-      <h2 id="sharing">6. Sharing and third parties</h2>
-      <p>StepForge does not sell personal data. StepForge may interact with third-party services only to provide features you request or to maintain the app:</p>
-      <ul>
-        <li><strong>Google sign-in:</strong> optional account connection and profile information import.</li>
-        <li><strong>Health Connect:</strong> optional health data sync based on permissions you grant.</li>
-        <li><strong>Firebase services:</strong> authentication, cloud backup/restore, Firestore storage, analytics where configured, and crash diagnostics.</li>
-        <li><strong>Your email/share apps:</strong> when you choose to send feedback, share achievements, or export debug information.</li>
-      </ul>
-      <p>Third-party services are governed by their own policies and settings.</p>
-      <h2 id="permissions">7. Permissions and controls</h2>
-      <p>StepForge may request Android permissions such as Activity Recognition, Notifications, Exact Alarms, Health Connect permissions, and account-related permissions for Google sign-in. You can manage permissions in Android Settings, Health Connect settings, and StepForge settings.</p>
-      <h2 id="retention">8. Retention and deletion</h2>
-      <p>Local data stays on your device until you delete it, clear app data, use in-app deletion controls where available, or uninstall StepForge. Health Connect data is managed through Health Connect. Cloud backups may remain until deleted, replaced, disconnected, or removed with assistance where in-app deletion is not yet available.</p>
-      <h2 id="security">9. Security</h2>
-      <p>StepForge uses local Android app storage, Android sandboxing, optional App Lock, and secure transport for cloud features. No system can guarantee absolute security; keep your device updated and use a device screen lock.</p>
-      <h2 id="children">10. Children</h2>
-      <p>StepForge is not designed specifically for children under 13. Parents or guardians can clear local data, uninstall the app, or contact the Developer for help with cloud backup data.</p>
-      <h2 id="changes">11. Changes</h2>
-      <p>We may update this Policy to reflect new features, security improvements, platform requirements, or legal changes. The latest version will be published on this page.</p>
-      <h2 id="contact">12. Contact</h2>
-      <p><strong>Developer:</strong> Iman Mirzazadegan<br /><strong>Email:</strong> <a href="mailto:stepforge0@gmail.com">stepforge0@gmail.com</a><br /><strong>App:</strong> StepForge</p>
-      <div class="footer">Last updated: 2026-06-28</div>
+      <p>This Privacy Policy (“Policy”) explains how <strong>StepForge</strong> (“StepForge”, “we”, “us”, “our”, or “the App”) processes information when you install, access, or use the App. StepForge is developed and maintained by <strong>Iman Mirzazadegan</strong> (“Developer”).</p>
+      <p>StepForge is built as a privacy-conscious wellness app. The App is designed to keep most activity and wellness data on your device by default, while still offering optional integrations such as Health Connect, Google account sign-in, Firebase-based cloud backup/restore, crash diagnostics, and sharing features when you choose to use them.</p>
+      <div class="callout"><p><strong>Plain-language summary:</strong> StepForge does not sell your personal data, does not use advertising SDKs designed to track you across apps, and does not require a StepForge account for the core step tracking experience. Optional cloud, Health Connect, Google profile, and sharing features may process additional data only when used.</p></div>
+      <div class="toc"><div class="toc-title">Contents</div><ul><li><a href="#scope">1. Scope</a></li><li><a href="#controller">2. Responsible party</a></li><li><a href="#summary">3. Privacy at a glance</a></li><li><a href="#data">4. Data we process</a></li><li><a href="#sources">5. Data sources</a></li><li><a href="#purposes">6. Why we process data</a></li><li><a href="#legal-bases">7. Legal bases where required</a></li><li><a href="#storage">8. Storage locations</a></li><li><a href="#sharing">9. Sharing and processors</a></li><li><a href="#permissions">10. Permissions</a></li><li><a href="#health-connect">11. Health Connect</a></li><li><a href="#backup">12. Sync and backup</a></li><li><a href="#profile">13. Profile and Google account</a></li><li><a href="#retention">14. Retention and deletion</a></li><li><a href="#rights">15. Your rights and controls</a></li><li><a href="#security">16. Security</a></li><li><a href="#children">17. Children</a></li><li><a href="#international">18. International processing</a></li><li><a href="#changes">19. Changes</a></li><li><a href="#contact">20. Contact</a></li></ul></div>
+      <h2 id="scope">1. Scope</h2><p>This Policy applies to StepForge distributed through official channels and to features available inside the App, including step tracking, Home dashboard, Progress dashboard, History and day detail, achievements, streaks, level/XP-style progress, profile personalization, goals, widgets, notifications, hydration, sleep and naps, workouts, App Lock, Health Connect, Google account profile import, feedback/support, debug exports, and Sync &amp; Backup.</p>
+      <h2 id="controller">2. Responsible party</h2><p>StepForge is developed and maintained by Iman Mirzazadegan. For privacy questions, data requests, or deletion help, contact <a href="mailto:stepforge0@gmail.com">stepforge0@gmail.com</a>.</p>
+      <h2 id="summary">3. Privacy at a glance</h2><div class="grid"><div class="mini"><b>Local-first design</b><p>Daily steps, history, goals, water logs, sleep logs, achievements, profile preferences, and most settings are stored locally on your device by default.</p></div><div class="mini"><b>Optional cloud and integrations</b><p>Health Connect, Google sign-in/profile import, Firebase backup/restore, and crash diagnostics are optional or feature-dependent.</p></div><div class="mini"><b>No sale of personal data</b><p>StepForge does not sell personal data and does not use third-party advertising SDKs designed for cross-app tracking.</p></div><div class="mini"><b>User control</b><p>You control Android permissions, Health Connect access, Google account connection, backup options, and local deletion controls.</p></div></div>
+      <h2 id="data">4. Data we process</h2><p>The exact data processed depends on which features you use, your device, Android permissions, and connected services.</p>
+      <div class="table-wrap"><table><thead><tr><th>Category</th><th>Examples</th><th>Used for</th><th>Default storage</th></tr></thead><tbody><tr><td>Steps and activity</td><td>Daily steps, optional hourly steps, active minutes, distance and calorie estimates, trend data, charts, heatmaps.</td><td>Home, Progress, History, widgets, achievements, streaks, goals, daily summaries.</td><td>On device; optionally Health Connect/cloud if enabled.</td></tr><tr><td>Goals and progress</td><td>Step goal, calorie goal, active minute goal, distance goal, water goal, sleep goal, goal completion, personal records.</td><td>Goal cards, progress rings, reminders, profile, achievements.</td><td>On device; supported goals may be included in backup.</td></tr><tr><td>Hydration</td><td>Water intake logs, daily water total, reminder interval, active reminder hours.</td><td>Water screen, reminders, history and profile personalization.</td><td>On device; optionally backup if enabled.</td></tr><tr><td>Sleep and naps</td><td>Main sleep sessions, nap records, start/end times, duration, quality score, sleep stages if available, source labels.</td><td>Sleep screen, history, profile summary, Health Connect sync, insights.</td><td>On device; Health Connect if imported/exported; optionally backup if enabled.</td></tr><tr><td>Workouts</td><td>Workout duration, walking summaries, distance, steps, calories, workout type, timestamps.</td><td>Today snapshot, profile, insights, history and progress summaries.</td><td>On device; optionally backup if supported and enabled.</td></tr><tr><td>Achievements and streaks</td><td>Unlocked achievements, progress toward milestones, earned dates, streaks, points, level/XP-style display.</td><td>Achievements page, Profile showcase, share screens, motivation features.</td><td>On device; optionally backup if enabled.</td></tr><tr><td>Profile</td><td>Name/nickname, optional profile photo/URI, gender, birth date or age, height, weight, units, premium status display.</td><td>Personalization, distance/calorie estimates, profile UI, goal personalization.</td><td>On device; some profile fields may be excluded from backup unless clearly supported.</td></tr><tr><td>Google account data</td><td>Display name, email address, profile photo URL when Google sign-in is used.</td><td>Optional profile import and account-linked backup features.</td><td>On device and/or Firebase account context depending on enabled features.</td></tr><tr><td>App security data</td><td>App Lock status, PIN-related settings, biometric preference, timeout, recovery questions/answers if configured.</td><td>Protect access to the App and manage unlock behavior.</td><td>On device. Biometric data itself stays with Android.</td></tr><tr><td>Diagnostics and support</td><td>Crash traces, app version, device model, OS version, debug logs you export, support messages.</td><td>Fix crashes, sync bugs, sensor issues and support requests.</td><td>Firebase Crashlytics and/or your selected email/share app when used.</td></tr></tbody></table></div>
+      <h3>4.1 Step and sensor accuracy data</h3><p>StepForge may compare device sensor output, Step Counter changes, Step Detector signals, timestamps, and validation logic to improve counting and reduce overcounting. Sensor-based activity metrics may still be inaccurate because Android hardware, phone placement, transport movement, vibration, and battery/background limits can affect results.</p>
+      <h3>4.2 Manual edits and sync reconciliation</h3><p>If you manually adjust steps, water, sleep, or other supported values, StepForge may store those edits locally and use source labels to avoid duplicate records when Health Connect or backup sync is enabled.</p>
+      <h3>4.3 Generated images and sharing</h3><p>Achievement share images and similar screenshots are generated locally for user-initiated sharing. StepForge does not automatically publish them. Your selected share target may process the shared content under its own terms and privacy policy.</p>
+      <h2 id="sources">5. Data sources</h2><ul><li><strong>You:</strong> information you enter, edit, confirm, or share.</li><li><strong>Your device:</strong> Android sensors, app storage, local notifications, widgets, and device settings.</li><li><strong>Health Connect:</strong> records you explicitly allow StepForge to read or write.</li><li><strong>Google account:</strong> basic sign-in/profile information if you connect Google and approve its use.</li><li><strong>Firebase services:</strong> account, backup, Firestore, analytics where configured, and crash diagnostic services.</li></ul>
+      <h2 id="purposes">6. Why we process data</h2><ul><li><strong>Core app operation:</strong> track steps, display progress, keep history, update widgets, and show daily totals.</li><li><strong>Personalization:</strong> apply profile, theme, language, units, goals, hydration and sleep preferences.</li><li><strong>Insights and motivation:</strong> calculate trends, achievements, streaks, daily summaries, personal records and goal completion.</li><li><strong>Sync and continuity:</strong> import/export permitted Health Connect records and restore supported backup data.</li><li><strong>Security:</strong> provide optional App Lock, PIN, biometric preference and recovery flows.</li><li><strong>Communication:</strong> handle feedback, help requests, debug exports and support messages you initiate.</li><li><strong>Reliability:</strong> detect crashes, improve performance, fix counting/sync bugs and protect data integrity.</li></ul>
+      <h2 id="legal-bases">7. Legal bases where required</h2><p>Where data protection laws such as GDPR require a legal basis, StepForge generally relies on one or more of the following:</p><ul><li><strong>Performance of a service you request:</strong> providing core tracking, goals, history, widgets and profile features.</li><li><strong>Consent:</strong> optional Health Connect access, Google sign-in/profile import, notifications, and optional cloud backup where applicable.</li><li><strong>Legitimate interests:</strong> app security, crash diagnostics, fraud/abuse prevention, and reliability improvements that do not override your rights.</li><li><strong>Legal obligations:</strong> where we must keep or disclose information to comply with applicable law.</li></ul><p class="section-note">This section is provided for transparency and does not limit rights that apply under mandatory local law.</p>
+      <h2 id="storage">8. Storage locations</h2><h3>8.1 On-device storage</h3><p>Most StepForge data is stored in Android app-private storage using local databases, preferences, files and caches. Other apps cannot normally access this storage under Android sandboxing.</p><h3>8.2 Health Connect</h3><p>Health Connect data is managed by Android/Health Connect. StepForge can access only data types you allow and only while those permissions remain granted.</p><h3>8.3 Cloud storage</h3><p>If Sync &amp; Backup is enabled, supported backup data may be stored using Firebase services. Cloud data is used to provide restore and continuity, not advertising.</p><h3>8.4 Cache and generated files</h3><p>StepForge may temporarily store generated images, debug exports, cached profile images, logs, or local UI resources. Temporary data may be cleared by the App, Android, or by clearing app storage.</p>
+      <h2 id="sharing">9. Sharing and processors</h2><p>StepForge does not sell personal data. Limited data may be processed by third-party services only when needed for features you use or to keep the App reliable:</p><ul><li><strong>Google Health Connect:</strong> health data access controlled by your permissions.</li><li><strong>Google sign-in:</strong> optional account connection and basic profile import.</li><li><strong>Firebase Authentication / Firestore / Cloud services:</strong> account-linked backup and restore when enabled.</li><li><strong>Firebase Crashlytics:</strong> crash diagnostics and stability reports.</li><li><strong>Google Play services:</strong> platform services, authentication, app distribution and security checks.</li><li><strong>Email/share apps:</strong> feedback, debug export, or achievement sharing when initiated by you.</li></ul><p>Third-party services have their own privacy policies and settings. StepForge cannot control how third-party apps process data after you choose to share or export it.</p>
+      <h2 id="permissions">10. Permissions</h2><p>StepForge may request permissions depending on enabled features:</p><ul><li><strong>Activity Recognition:</strong> to count steps and detect activity.</li><li><strong>Notifications:</strong> to show reminders, activity prompts, goal updates and water reminders.</li><li><strong>Exact alarms:</strong> to schedule reminders reliably on Android versions that restrict background work.</li><li><strong>Health Connect permissions:</strong> to read/write only health data types you approve.</li><li><strong>Internet/network:</strong> for optional sync, backup, sign-in, crash diagnostics and support features.</li><li><strong>Biometric authentication:</strong> handled by Android if you enable biometric App Lock.</li></ul><p>You can grant, deny or revoke permissions in Android Settings, Health Connect Settings, and StepForge settings.</p>
+      <h2 id="health-connect">11. Health Connect</h2><p>Health Connect integration is optional. If enabled, StepForge may read or write permitted records such as steps, distance, total calories burned, weight, sleep sessions and sleep stages. StepForge uses source labels and reconciliation logic to reduce duplicate entries, for example distinguishing manual sleep/nap entries from imported Health Connect sessions.</p><div class="warning callout"><p><strong>Accuracy note:</strong> Health Connect data can come from other apps and devices. Differences between StepForge, Samsung Health, Google Fit, wearables, and Health Connect may occur because each source can use different sensors, filters, rounding and sync timing.</p></div>
+      <h2 id="backup">12. Sync and backup</h2><p>Sync &amp; Backup is optional and intended to help restore supported data after reinstall or device change. Backup categories may include activity history, goals, settings, achievements/progress metadata, hydration, sleep, workout summaries and other supported StepForge state.</p><p>Some data may be excluded for privacy or safety reasons, such as App Lock secrets, biometric data, temporary cache files, and other fields that should remain local. Backup availability, completeness and restore accuracy may depend on network connectivity, app version and Firebase availability.</p>
+      <h2 id="profile">13. Profile and Google account</h2><p>When you connect Google, StepForge may show a confirmation dialog with available account information such as display name, email and profile photo. This information is not forced into your profile automatically; you can save it, edit it or decline it.</p><p>Profile fields are used for personalization, display, estimates and goals. You can edit profile and goal values inside the App.</p>
+      <h2 id="retention">14. Retention and deletion</h2><ul><li><strong>Local data:</strong> remains until deleted in-app, cleared through Android app settings, or removed by uninstalling.</li><li><strong>Health Connect:</strong> managed in Health Connect settings, including access permissions and record deletion.</li><li><strong>Cloud backup:</strong> may remain until overwritten, disconnected, deleted through available controls, or removed with assistance.</li><li><strong>Crash diagnostics:</strong> retained by Firebase/Google according to their service settings and retention periods.</li><li><strong>Shared exports:</strong> controlled by the app or service you shared them to.</li></ul><p>If an in-app delete option is not available for a specific cloud backup category, contact us for help.</p>
+      <h2 id="rights">15. Your rights and controls</h2><p>Depending on your location, you may have rights to access, correct, delete, restrict or object to certain processing, and to withdraw consent for optional features.</p><ul><li>Review and revoke Android permissions.</li><li>Review and revoke Health Connect permissions.</li><li>Edit profile and goal information in the App.</li><li>Disable sync/backup and disconnect account features where available.</li><li>Clear local data or uninstall the App.</li><li>Contact us for privacy questions or cloud backup deletion help.</li></ul>
+      <h2 id="security">16. Security</h2><p>StepForge uses Android app-private storage, Android sandboxing, optional App Lock, secure transport for cloud services, and data-minimization practices where possible. No system can guarantee absolute security. Keep your device updated, use a device screen lock, and avoid sharing debug exports publicly.</p>
+      <h2 id="children">17. Children</h2><p>StepForge is not designed specifically for children under 13. If you are a parent or guardian and want data removed, you can clear local data, uninstall the App, revoke Health Connect access, or contact us for cloud backup assistance.</p>
+      <h2 id="international">18. International processing</h2><p>If you use optional cloud, authentication, crash diagnostic, or support features, data may be processed on servers or systems located outside your country. Third-party providers may process data according to their own infrastructure and policies.</p>
+      <h2 id="changes">19. Changes to this Policy</h2><p>We may update this Policy to reflect new features, platform requirements, security improvements, or legal changes. The latest version will be published on this page. Significant changes may also be referenced inside the App.</p>
+      <h2 id="contact">20. Contact</h2><p><strong>Developer:</strong> Iman Mirzazadegan<br /><strong>Email:</strong> <a href="mailto:stepforge0@gmail.com">stepforge0@gmail.com</a><br /><strong>App:</strong> StepForge</p><div class="footer">Last updated: 2026-06-28</div>
     </main>
   </div>
 </body>
