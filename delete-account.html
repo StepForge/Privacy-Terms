@@ -6,151 +6,49 @@
   <meta name="color-scheme" content="dark light" />
   <meta name="robots" content="index,follow" />
   <title>StepForge – Delete Account</title>
-  <meta name="description" content="Request deletion of your StepForge account and associated data." />
+  <meta name="description" content="Sign in securely and permanently delete your StepForge account and associated data." />
   <style>
-    :root {
-      --bg: #050608;
-      --card: #0b0e13;
-      --card2: #111720;
-      --text: #f6fbff;
-      --sub: #b9c5d1;
-      --muted: #8493a3;
-      --border: rgba(255,255,255,.10);
-      --cyan: #00e5ff;
-      --green: #00f5a0;
-      --danger: #ff7c7c;
-    }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; min-height: 100%; }
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 50% -10%, rgba(0,229,255,.15), transparent 33%),
-        linear-gradient(180deg, #0a0e13 0%, var(--bg) 58%, #030405 100%);
-      line-height: 1.65;
-    }
-    a { color: #80efff; }
-    .wrap { max-width: 880px; margin: 0 auto; padding: 34px 16px 64px; }
-    .nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
-    .nav a {
-      color: var(--sub); text-decoration: none; font-size: 13px; font-weight: 700;
-      padding: 8px 13px; border-radius: 999px; border: 1px solid var(--border);
-      background: rgba(255,255,255,.035);
-    }
-    .nav a.current { color: #021114; border-color: transparent; background: linear-gradient(135deg,var(--green),var(--cyan)); }
-    .brand { text-align: center; margin-bottom: 22px; }
-    .brand img {
-      width: 86px; height: 86px; object-fit: contain; border-radius: 24px;
-      border: 1px solid rgba(0,229,255,.45); background: #07090c;
-      box-shadow: 0 0 36px rgba(0,229,255,.18);
-    }
-    .brand h1 { margin: 14px 0 4px; font-size: clamp(26px, 5vw, 36px); }
-    .brand p { margin: 0; color: var(--muted); font-size: 14px; }
-    .card {
-      border: 1px solid var(--border); border-radius: 26px; padding: 28px;
-      background: linear-gradient(180deg, rgba(17,23,32,.96), rgba(7,9,13,.98));
-      box-shadow: 0 24px 70px rgba(0,0,0,.48);
-    }
-    .lead {
-      border: 1px solid rgba(0,229,255,.22); border-radius: 18px; padding: 16px;
-      background: linear-gradient(135deg, rgba(0,229,255,.07), rgba(0,245,160,.04));
-      color: var(--sub); margin-bottom: 22px;
-    }
-    h2 { margin: 26px 0 10px; font-size: 20px; }
-    h2:first-of-type { margin-top: 0; }
-    p, li { color: var(--sub); font-size: 14px; }
-    ol, ul { padding-left: 22px; }
-    li { margin: 7px 0; }
-    .request {
-      margin: 18px 0; padding: 18px; border-radius: 18px;
-      border: 1px solid rgba(0,245,160,.24); background: rgba(0,245,160,.055);
-    }
-    .button {
-      display: inline-block; margin-top: 8px; padding: 12px 16px; border-radius: 12px;
-      text-decoration: none; color: #031215; font-weight: 850;
-      background: linear-gradient(135deg,var(--green),var(--cyan));
-    }
-    .security {
-      margin-top: 14px; border-left: 3px solid var(--danger); padding: 10px 14px;
-      background: rgba(255,124,124,.055); border-radius: 8px;
-    }
-    .security strong { color: #ffd3d3; }
-    .meta { color: var(--muted); font-size: 12px; margin-top: 26px; text-align: center; }
-    code { color: #e8fbff; background: rgba(255,255,255,.06); padding: 2px 5px; border-radius: 6px; }
-    @media (prefers-color-scheme: light) {
-      :root { --bg:#f4f8fb; --card:#fff; --card2:#f8fbfd; --text:#10202e; --sub:#40546a; --muted:#667b8d; --border:rgba(35,64,86,.14); }
-      body { background: radial-gradient(circle at 50% -10%,rgba(0,196,255,.15),transparent 34%),linear-gradient(180deg,#fff,#f3f8fb); }
-      .card { background: linear-gradient(180deg,#fff,#fbfdff); box-shadow: 0 24px 70px rgba(42,77,102,.14); }
-      .nav a { background: rgba(255,255,255,.9); }
-      .brand img { background:#fff; }
-      .lead { background: linear-gradient(135deg,rgba(0,229,255,.08),rgba(0,245,160,.07)); }
-      .request { background: rgba(0,180,120,.055); }
-      .security { background: rgba(220,60,60,.05); }
-      .security strong { color:#8d2626; }
-      code { color:#163849; background:rgba(20,70,95,.06); }
-    }
-    @media (max-width: 600px) { .wrap { padding-top: 18px; } .card { padding: 20px 16px; border-radius: 22px; } }
+    :root { --bg:#050608; --card:#0b0e13; --card2:#111720; --text:#f6fbff; --sub:#b9c5d1; --muted:#8493a3; --border:rgba(255,255,255,.10); --cyan:#00e5ff; --green:#00f5a0; --danger:#ff6b6b; }
+    *{box-sizing:border-box} html,body{margin:0;min-height:100%} body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--text);background:radial-gradient(circle at 50% -10%,rgba(0,229,255,.15),transparent 33%),linear-gradient(180deg,#0a0e13 0%,var(--bg) 58%,#030405 100%);line-height:1.6} a{color:#80efff} button{font:inherit}.wrap{max-width:880px;margin:0 auto;padding:34px 16px 64px}.nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:24px}.nav a{color:var(--sub);text-decoration:none;font-size:13px;font-weight:700;padding:8px 13px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.035)}.nav a.current{color:#021114;border-color:transparent;background:linear-gradient(135deg,var(--green),var(--cyan))}.brand{text-align:center;margin-bottom:22px}.brand img{width:86px;height:86px;object-fit:contain;border-radius:24px;border:1px solid rgba(0,229,255,.45);background:#07090c;box-shadow:0 0 36px rgba(0,229,255,.18)}.brand h1{margin:14px 0 4px;font-size:clamp(27px,5vw,38px)}.brand p{margin:0;color:var(--muted);font-size:14px}.card{border:1px solid var(--border);border-radius:26px;padding:28px;background:linear-gradient(180deg,rgba(17,23,32,.96),rgba(7,9,13,.98));box-shadow:0 24px 70px rgba(0,0,0,.48)}.lead{border:1px solid rgba(0,229,255,.22);border-radius:18px;padding:16px;background:linear-gradient(135deg,rgba(0,229,255,.07),rgba(0,245,160,.04));color:var(--sub);margin-bottom:22px}.authbox{border:1px solid var(--border);border-radius:20px;padding:20px;background:rgba(255,255,255,.025);margin:18px 0 24px}.authbox h2{margin:0 0 7px;font-size:20px}.authbox p{margin:0 0 16px}.google-btn,.danger-btn,.secondary-btn{width:100%;min-height:50px;border-radius:14px;border:0;cursor:pointer;font-weight:800;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .15s ease,opacity .15s ease}.google-btn{color:#15202b;background:#fff;border:1px solid rgba(0,0,0,.12)}.google-btn svg{width:19px;height:19px}.danger-btn{color:#fff;background:linear-gradient(135deg,#e94b4b,#ff6b6b);margin-top:12px}.secondary-btn{color:var(--sub);background:transparent;border:1px solid var(--border);margin-top:10px}button:hover:not(:disabled){transform:translateY(-1px)}button:disabled{opacity:.52;cursor:not-allowed}.account{display:none;align-items:center;gap:13px;padding:14px;border:1px solid rgba(0,229,255,.22);border-radius:16px;background:rgba(0,229,255,.045)}.avatar{width:48px;height:48px;border-radius:50%;object-fit:cover;background:var(--card2);border:1px solid var(--border)}.account-main{min-width:0;flex:1}.account-name{font-weight:850;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.account-email{color:var(--muted);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.verified{color:#04261c;background:var(--green);padding:4px 8px;border-radius:999px;font-size:10px;font-weight:900}h2{margin:27px 0 10px;font-size:20px}p,li{color:var(--sub);font-size:14px}ul{padding-left:22px}li{margin:7px 0}.warning{border-left:3px solid var(--danger);padding:11px 14px;border-radius:8px;background:rgba(255,107,107,.06);margin:17px 0}.warning strong{color:#ffd0d0}.status{display:none;margin-top:13px;padding:12px 14px;border-radius:12px;font-size:13px;border:1px solid var(--border);color:var(--sub);background:rgba(255,255,255,.03)}.status.error{display:block;border-color:rgba(255,107,107,.34);color:#ffd0d0}.status.ok{display:block;border-color:rgba(0,245,160,.32);color:#bfffe8}.status.busy{display:block;border-color:rgba(0,229,255,.3);color:#c8f8ff}.spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,.28);border-top-color:currentColor;border-radius:50%;animation:spin .8s linear infinite;display:inline-block;vertical-align:-3px;margin-right:7px}@keyframes spin{to{transform:rotate(360deg)}}.success{display:none;text-align:center;padding:28px 10px}.success .check{width:64px;height:64px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;font-size:31px;font-weight:900;color:#032018;background:linear-gradient(135deg,var(--green),var(--cyan))}.success h2{margin:0 0 8px;font-size:25px}.meta{color:var(--muted);font-size:12px;margin-top:26px;text-align:center}.modal-backdrop{display:none;position:fixed;inset:0;z-index:50;padding:20px;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);align-items:center;justify-content:center}.modal{width:min(480px,100%);border-radius:22px;padding:22px;background:#0d1118;border:1px solid rgba(255,255,255,.13);box-shadow:0 30px 100px rgba(0,0,0,.7)}.modal h2{margin:0 0 8px}.modal p{margin:0 0 14px}.modal-account{padding:11px 12px;border-radius:12px;background:rgba(255,255,255,.045);color:var(--text);font-size:13px;word-break:break-all}.modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.modal-actions button{min-height:46px;border-radius:12px;font-weight:850;cursor:pointer}.cancel{color:var(--text);border:1px solid var(--border);background:transparent}.confirm{color:#fff;border:0;background:#e94b4b}@media(prefers-color-scheme:light){:root{--bg:#f4f8fb;--card:#fff;--card2:#f8fbfd;--text:#10202e;--sub:#40546a;--muted:#667b8d;--border:rgba(35,64,86,.14)}body{background:radial-gradient(circle at 50% -10%,rgba(0,196,255,.15),transparent 34%),linear-gradient(180deg,#fff,#f3f8fb)}.card{background:linear-gradient(180deg,#fff,#fbfdff);box-shadow:0 24px 70px rgba(42,77,102,.14)}.nav a{background:rgba(255,255,255,.9)}.brand img{background:#fff}.authbox{background:#f9fcfe}.modal{background:#fff}.warning strong{color:#8d2626}}@media(max-width:600px){.wrap{padding-top:18px}.card{padding:20px 16px;border-radius:22px}.account{align-items:flex-start}.verified{display:none}.modal-actions{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <main class="wrap">
-    <nav class="nav" aria-label="StepForge legal pages">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="delete-account.html" class="current" aria-current="page">Delete Account</a>
-    </nav>
-
-    <div class="brand">
-      <img src="ic_walk.png" alt="StepForge logo" />
-      <h1>Delete your StepForge account</h1>
-      <p>Account and associated-data deletion request</p>
-    </div>
-
+    <nav class="nav" aria-label="StepForge legal pages"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="delete-account.html" class="current" aria-current="page">Delete Account</a></nav>
+    <div class="brand"><img src="ic_walk.png" alt="StepForge logo" /><h1>Delete your StepForge account</h1><p>Secure account and associated-data deletion</p></div>
     <section class="card">
-      <div class="lead">
-        You can request deletion of your <strong>StepForge</strong> account and personal data associated with that account at any time. You do not need to reinstall the app to make a request from this page.
+      <div id="deletionFlow">
+        <div class="lead">Sign in with the <strong>Google account connected to StepForge</strong>. Your email address is not sent to StepForge support and you do not need to send a deletion request manually.</div>
+        <div class="authbox"><h2>1. Verify your StepForge account</h2><p>Google will let you choose an account. StepForge deletes only the Firebase account authenticated by Google — the page cannot delete another user by entering an email address.</p>
+          <button id="signInBtn" class="google-btn" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.227c0-.709-.064-1.391-.182-2.045H12v3.868h5.382a4.6 4.6 0 0 1-1.995 3.018v2.509h3.232c1.891-1.741 2.981-4.305 2.981-7.35Z"/><path fill="#34A853" d="M12 22c2.7 0 4.964-.895 6.619-2.423l-3.232-2.509c-.895.6-2.041.955-3.387.955-2.605 0-4.809-1.759-5.6-4.123H3.059v2.591A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 13.9A6.014 6.014 0 0 1 6.086 12c0-.659.114-1.3.314-1.9V7.509H3.059A10 10 0 0 0 2 12c0 1.614.386 3.141 1.059 4.491L6.4 13.9Z"/><path fill="#EA4335" d="M12 5.977c1.468 0 2.786.505 3.823 1.495l2.868-2.868C16.959 2.991 14.695 2 12 2a10 10 0 0 0-8.941 5.509L6.4 10.1C7.191 7.736 9.395 5.977 12 5.977Z"/></svg>Continue with Google</button>
+          <div id="accountCard" class="account"><img id="avatar" class="avatar" alt="" /><div class="account-main"><div id="accountName" class="account-name"></div><div id="accountEmail" class="account-email"></div></div><span class="verified">VERIFIED</span></div>
+          <button id="switchBtn" class="secondary-btn" type="button" style="display:none">Choose another Google account</button><div id="status" class="status" role="status" aria-live="polite"></div>
+        </div>
+        <h2>2. Permanently delete the account</h2><p>After verification, you can permanently delete the selected StepForge account. This action cannot be undone.</p>
+        <ul><li>Your StepForge Firebase Authentication account is deleted.</li><li>Your StepForge cloud profile, backups and Premium entitlement record are deleted.</li><li>StepForge billing-account associations and purchase-token records linked to this StepForge account are deleted.</li><li>If a renewable Google Play StepForge subscription is linked, future renewals are stopped before deletion. This does not automatically refund previous charges.</li></ul>
+        <div class="warning"><strong>This does not delete your Google Account.</strong> It also cannot remotely erase StepForge data that exists only on one of your devices. Local-only data can be removed by clearing the app's storage or uninstalling StepForge.</div>
+        <button id="deleteBtn" class="danger-btn" type="button" disabled>Permanently delete StepForge account</button>
+        <h2>Privacy and security</h2><p>StepForge never asks you to type your Google password into this page. Google handles the sign-in window. The deletion backend identifies the account from Firebase Authentication and does not accept an email address or UID from the page as the deletion target.</p>
+        <h2>Need help?</h2><p>For technical problems with the deletion page, contact <a href="mailto:stepforge0@gmail.com">stepforge0@gmail.com</a>. Email is for support only; account deletion itself is completed through the secure flow above.</p>
       </div>
-
-      <h2>How to request deletion</h2>
-      <ol>
-        <li>Send the request from the Google email address you use to sign in to StepForge whenever possible.</li>
-        <li>Use the subject <code>StepForge Account Deletion Request</code>.</li>
-        <li>Include the email address associated with your StepForge account. You may also include an optional reason, but it is not required.</li>
-        <li>We may reply to the same email address if a minimal ownership check is necessary before deleting account-linked data.</li>
-      </ol>
-
-      <div class="request">
-        <strong>Request account deletion by email</strong><br />
-        <a class="button" href="mailto:stepforge0@gmail.com?subject=StepForge%20Account%20Deletion%20Request">Email StepForge</a>
-        <p>If the button does not open your email app, send your request to <strong>stepforge0@gmail.com</strong>.</p>
-      </div>
-
-      <div class="security">
-        <strong>For your security:</strong> never send your Google password, one-time codes, authentication tokens, payment details, Health Connect records, or other sensitive health information in a deletion request. StepForge will not ask for your password.
-      </div>
-
-      <h2>What is deleted</h2>
-      <p>After a valid deletion request is verified and completed, StepForge will delete the account record, sign-in association, profile information, and other account-linked personal data that is stored under StepForge's control, where such data exists.</p>
-      <p>If StepForge has stored copies of health or activity data linked to your account, those copies under StepForge's control will also be deleted as part of the account-deletion process.</p>
-
-      <h2>Data stored only on your device</h2>
-      <p>Some StepForge data may exist only on your device. Local-only data can be removed by using the app's data-clearing controls, clearing StepForge's app storage in Android settings, or uninstalling the app. A web deletion request cannot remotely erase files that exist only on a device that StepForge cannot access.</p>
-
-      <h2>Google, Health Connect, and other services</h2>
-      <p>Deleting your StepForge account does <strong>not</strong> delete your Google Account or data independently controlled by Google, Health Connect, Samsung Health, or another third-party service. StepForge will delete data under its own control; source data held by those services must be managed through the relevant service's own settings.</p>
-
-      <h2>Retention</h2>
-      <p>StepForge does not intentionally keep deleted account or profile data after the deletion process is completed. Limited information may be retained only when required by law, or when strictly necessary for security, fraud prevention, dispute resolution, or enforcement of legal obligations. Any such retention is limited to the minimum data and period required for that purpose.</p>
-
-      <h2>Processing time</h2>
-      <p>We aim to process verified deletion requests as soon as reasonably possible. If additional verification or a legally required retention obligation applies, we will communicate that when appropriate.</p>
-
-      <h2>Need help?</h2>
-      <p>For questions about account deletion or privacy, contact <a href="mailto:stepforge0@gmail.com">stepforge0@gmail.com</a>.</p>
+      <div id="success" class="success"><div class="check">✓</div><h2>StepForge account deleted</h2><p>Your authenticated StepForge account and associated StepForge cloud data have been deleted. If a renewable linked subscription existed, StepForge also requested that Google Play stop future renewals.</p></div>
     </section>
-
-    <p class="meta">StepForge account deletion resource · Last updated September 1, 2026</p>
+    <p class="meta">StepForge account deletion resource · Last updated September 10, 2026</p>
   </main>
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="confirmTitle"><div class="modal"><h2 id="confirmTitle">Delete this StepForge account?</h2><p>This permanently deletes the authenticated StepForge account and its associated cloud data.</p><div id="modalEmail" class="modal-account"></div><p style="margin-top:12px">You will be asked to verify the same Google account one more time before deletion.</p><div class="modal-actions"><button id="cancelDeleteBtn" class="cancel" type="button">Cancel</button><button id="confirmDeleteBtn" class="confirm" type="button">Yes, delete permanently</button></div></div></div>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut, reauthenticateWithPopup } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
+    import { getFunctions, httpsCallable } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-functions.js";
+    const firebaseConfig={apiKey:"AIzaSyDqOkxaiGg-yMj9zIOg38_Ilt-aLBxDqQA",authDomain:"stepforge-01.firebaseapp.com",projectId:"stepforge-01",storageBucket:"stepforge-01.firebasestorage.app",messagingSenderId:"798781764133",appId:"1:798781764133:web:9bd2891cec45ac4d2f85cc",measurementId:"G-83BD29S9N7"};
+    const app=initializeApp(firebaseConfig),auth=getAuth(app),functions=getFunctions(app,"europe-west1"),provider=new GoogleAuthProvider(); provider.setCustomParameters({prompt:"select_account"});
+    const deleteStepForgeAccount=httpsCallable(functions,"deleteStepForgeAccount",{timeout:120000});
+    const $=id=>document.getElementById(id),signInBtn=$("signInBtn"),switchBtn=$("switchBtn"),deleteBtn=$("deleteBtn"),accountCard=$("accountCard"),accountName=$("accountName"),accountEmail=$("accountEmail"),avatar=$("avatar"),status=$("status"),modalBackdrop=$("modalBackdrop"),modalEmail=$("modalEmail"),cancelDeleteBtn=$("cancelDeleteBtn"),confirmDeleteBtn=$("confirmDeleteBtn"),deletionFlow=$("deletionFlow"),success=$("success"); let busy=false;
+    function setStatus(kind,message){status.className="status"+(kind?" "+kind:"");status.innerHTML=message||""} function friendlyError(error){const code=error?.code||"";if(code.includes("popup-closed-by-user")||code.includes("cancelled-popup-request"))return"Google sign-in was cancelled. Nothing was deleted.";if(code.includes("popup-blocked"))return"Your browser blocked the Google sign-in window. Allow pop-ups for this page and try again.";if(code.includes("user-mismatch"))return"Please verify the same Google account that is currently selected.";if(code.includes("failed-precondition"))return"For security, please verify your Google account again and retry.";if(code.includes("unauthenticated"))return"Your sign-in session expired. Sign in again and retry.";if(code.includes("resource-exhausted"))return"Too many attempts. Please wait a moment and try again.";if(code.includes("unavailable"))return"Account deletion is temporarily unavailable. No deletion was completed. Please try again later.";return"Something went wrong. No deletion was completed. Please try again."}
+    function setBusy(v){busy=v;signInBtn.disabled=v;switchBtn.disabled=v;deleteBtn.disabled=v||!auth.currentUser;confirmDeleteBtn.disabled=v;cancelDeleteBtn.disabled=v} function renderUser(user){if(!user){signInBtn.style.display="flex";accountCard.style.display="none";switchBtn.style.display="none";deleteBtn.disabled=true;accountName.textContent="";accountEmail.textContent="";return}signInBtn.style.display="none";accountCard.style.display="flex";switchBtn.style.display="flex";deleteBtn.disabled=busy;accountName.textContent=user.displayName||"StepForge user";accountEmail.textContent=user.email||"Verified Google account";avatar.src=user.photoURL||"ic_walk.png";avatar.alt=user.displayName?`${user.displayName} profile photo`:"Google account profile photo"}
+    async function chooseAccount(){if(busy)return;setBusy(true);setStatus("busy",'<span class="spinner"></span>Opening Google account selection…');try{if(auth.currentUser)await signOut(auth);await signInWithPopup(auth,provider);setStatus("ok","Google account verified. Check the account above before continuing.")}catch(error){setStatus("error",friendlyError(error))}finally{setBusy(false);renderUser(auth.currentUser)}} signInBtn.addEventListener("click",chooseAccount);switchBtn.addEventListener("click",chooseAccount);
+    deleteBtn.addEventListener("click",()=>{const user=auth.currentUser;if(!user||busy)return;modalEmail.textContent=user.email||"Currently authenticated StepForge account";modalBackdrop.style.display="flex";confirmDeleteBtn.focus()}); function closeModal(){if(busy)return;modalBackdrop.style.display="none";deleteBtn.focus()} cancelDeleteBtn.addEventListener("click",closeModal);modalBackdrop.addEventListener("click",e=>{if(e.target===modalBackdrop)closeModal()});document.addEventListener("keydown",e=>{if(e.key==="Escape"&&modalBackdrop.style.display==="flex")closeModal()});
+    confirmDeleteBtn.addEventListener("click",async()=>{const user=auth.currentUser;if(!user||busy)return;setBusy(true);setStatus("busy",'<span class="spinner"></span>Verifying your account and deleting StepForge data…');try{await reauthenticateWithPopup(user,provider);await user.getIdToken(true);const result=await deleteStepForgeAccount({confirm:"DELETE"});if(!result?.data?.deleted)throw new Error("Deletion was not confirmed by the server");modalBackdrop.style.display="none";deletionFlow.style.display="none";success.style.display="block";try{await signOut(auth)}catch{}}catch(error){modalBackdrop.style.display="none";setStatus("error",friendlyError(error))}finally{setBusy(false);renderUser(auth.currentUser)}}); onAuthStateChanged(auth,user=>renderUser(user));
+  </script>
 </body>
 </html>
